@@ -1,5 +1,37 @@
-#login {
-	background-color: yellow;
-	margin: 0 auto;
+body {
+	background-color: #CC0300;
+}
+
+h1 {
+	font-family: "Raleway";
+}
+
+h2 {
+	font-family: "Raleway";
+}
+
+input {
+	margin: 2px;
 	width: 50%;
+}
+
+.wrapper {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login {
+    margin: 0 auto;
+    width: 30%;
+    background-color: white;
+    padding: 10px 10px;
+    text-align: center;
+    vertical-align: middle;
 }
