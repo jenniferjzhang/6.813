@@ -1,18 +1,41 @@
 body {
 	background-color: #CC0300;
+	font-family: "Open Sans";
 }
 
 h1 {
 	font-family: "Raleway";
+	font-size: 28pt;
 }
 
 h2 {
 	font-family: "Raleway";
+	font-size: 18pt;
+}
+
+a {
+	color: #707070;
+	text-decoration: none;
+}
+
+input[name = "login"] {
+	border: 1px solid #CC0300;
+	background-color: #FFFFFF;
+	min-width: 70%;
+	height: 30px;
+	font-family: "Open Sans";
+	font-size: 12pt;
 }
 
 input {
 	margin: 2px;
-	width: 50%;
+	border: 1px solid #E6E6E6;
+	color: #707070;
+	min-width: 70%;
+	height: 20px;
+	font-family: "Open Sans";
+	font-size: 12pt;
+	padding: 5px 5px;
 }
 
 .wrapper {
@@ -32,6 +55,13 @@ input {
     width: 30%;
     background-color: white;
     padding: 10px 10px;
-    text-align: center;
     vertical-align: middle;
+    text-align: center;
+}
+
+#login-title {
+	width: 100%;
+	border-bottom: 1px solid #CC0300;
+	padding: 2px 0px;
+	text-align: center;
 }
