@@ -10,13 +10,30 @@
 
 	<!-- Load style sheets -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
-	<div id = "login">
-		blah
+<div class = "wrapper">
+	<div class = "middle">
+		<div class = "login">
+
+		<div id = "login-title"><h1>Trak</h1></div>
+
+		<h2> Login </h2>
+
+		<input name = "username" type = "text" value = "Email"></input><br>
+		<input name = "password" type = "password"></input><br>
+
+		<input name = "login" type = "submit" value = "Login" onclick="window.location='dashboard.html';"></input><br>
+		OR <br>
+		<a href = "#" id = "create-account" > Create an Account</a><br>
+
+		</div>
 	</div>
+</div>
 </body>
 
 </html>
