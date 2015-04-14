@@ -23,3 +23,127 @@ a {
 	text-decoration: none;
 }
 
+#create-account {
+	color: #707070;
+	text-decoration: none;
+}
+
+input[name = "login"] {
+	border: 1px solid #CC0300;
+	background-color: #FFFFFF;
+	min-width: 70%;
+	height: 30px;
+	font-family: "Open Sans";
+	font-size: 12pt;
+}
+
+input {
+	margin: 2px;
+	border: 1px solid #E6E6E6;
+	color: #707070;
+	min-width: 70%;
+	height: 20px;
+	font-family: "Open Sans";
+	font-size: 12pt;
+	padding: 5px 5px;
+}
+
+.wrapper {
+    display: table;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login {
+    margin: 0 auto;
+    width: 30%;
+    background-color: white;
+    padding: 10px 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#login-title {
+	width: 100%;
+	border-bottom: 1px solid #CC0300;
+	padding: 2px 0px;
+	text-align: center;
+}
+
+.dashboard-wrapper{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.dashboard-navigation {
+	position: absolute;
+	height: 15%;
+	width: 100%;
+	background-color: #CC0300;
+	display: block;
+}
+
+.dashboard-groups {
+	position: absolute;
+	display: inline-block;
+	height: 85%;
+	width: 20%;
+	top: 15%;
+	background-color: green;
+}
+
+.dashboard-content {
+	position: absolute;
+	display: inline-block;
+	height: 85%;
+	width: 80%;
+	top: 15%;
+	left: 20%;
+	background-color: yellow;
+}
+
+#navigation-home {
+	font-family: "Raleway";
+	font-size: 28pt;
+	height: 100%;
+	width: 20%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+
+}
+
+#navigation-link {
+	font-family: "Raleway";
+	font-size: 20pt;
+	height: 100%;
+	width: 39.5%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	text-transform: uppercase;
+	text-align: center;
+} 
+
+#group {
+	font-family: "Raleway";
+	font-size: 18pt;
+	background-color: purple;
+	padding: 5px 5px;
+}
+
+#group:hover {
+	background-color: orange;
+}
