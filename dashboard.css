@@ -75,7 +75,51 @@ h2 {
 
 
 .ui.vertical.menu {
-	width: 90%;
+	width: 97%;
+	font-family: "Raleway";
+}
+
+.ui.vertical.menu .item {
+	font-size: 14pt;
+}
+
+.ui.vertical.menu .active.item {
+	box-shadow: none;
+	border: 1px solid #CC0300;
+	background-color: white;
+	border-radius: 0.2857rem;
+}
+
+.ui.vertical.menu .active.item:hover {
+	background-color: white;
+}
+
+.ui.menu .active.item {
+	box-shadow: none;
+	border: 1px solid #CC0300;
+	background-color: white;
+	border-radius: 0.2857rem;
+}
+
+.ui.menu .active.item:hover {
+	box-shadow: none;
+	border: 1px solid #CC0300;
+	background-color: white;
+	border-radius: 0.2857rem;
+}
+
+
+.ui.menu > a.item:hover{
+	box-shadow: none;
+	background-color: white;
+	border-radius: 0.2857rem;
+}
+
+
+.ui.vertical.menu .item:not(.dropdown) > .menu > .item {
+	font-size: 12pt;
+	vertical-align: middle;
+
 }
 
 #group {
@@ -88,4 +132,27 @@ h2 {
 .chart-container {
 	width: 90%;
 	margin: 0 auto;
+}
+
+/*.athlete-pic {
+	border-radius: 100%;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+
+}*/
+
+.img-container {
+	width: 25px;
+	height: 25px;
+	border-radius: 100%;
+	overflow: hidden;
+	display: inline-block;
+	float: right;
+	border: 1px solid #CC0300;
+
+}
+
+.img-container img {
+	width: 100%;
 }

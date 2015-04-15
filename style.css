@@ -3,8 +3,8 @@ For general overall style only
 */
 
 body {
-/*	background-color: #CC0300;
-*/	font-family: "Open Sans";
+	background-color: #FDFFBA;
+	font-family: "Open Sans";
 	color: black;
 }
 
@@ -70,6 +70,8 @@ input {
     padding: 10px 10px;
     vertical-align: middle;
     text-align: center;
+    border: 1px solid #CC0300;
+    border-radius: 0.2857rem;
 }
 
 #login-title {
