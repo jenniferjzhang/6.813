@@ -9,8 +9,17 @@
 	<title> TITLE </title>
 
 	<!-- Load style sheets -->
+	<meta charset="utf-8">
+
+	<link href="d3.css" rel="stylesheet" type="text/css">
+	<link href="graph.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.css" />
 	<link rel="stylesheet" type="text/css" href="style.css" />
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="dashboard.css" />
+=======
+
+>>>>>>> Semantic UI and added in chart
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
@@ -19,27 +28,34 @@
 <body>
 	<div class = "dashboard-wrapper">
 		<div class = "dashboard-navigation">
-			<div id = "navigation-home">
-				<a href = "#">Trck</a>
-			</div>
-			<div id = "navigation-link">
-				<a href = "#">Athlete Performance</a>
-			</div>
-			<div id = "navigation-link">
-				<a href = "#">Meet Planner</a>
+			<div class = "ui menu">
+				<a class = "active item" id = "navigation-home" href = "#">Trck</a>
+				<a class = "item" id = "navigation-link" href = "#">Athlete Performance</a>
+				<a class = "item" id = "navigation-link" href = "#">Meet Planner</a>
 			</div>
 		</div>
 		<div class = "dashboard-groups">
-			<div id = "group">
-				<a href = "#">Male Sprinters</a>
-			</div>
-			<div id = "group">
-				<a href = "#">Female Sprinters</a>
+			<div class = "ui vertical menu">
+				<a class = "active red item" href = "#">Male Sprinters</a>
+				<a class = "item" href = "#">Female Sprinters</a>
 			</div>
 		</div>
 		<div class = "dashboard-content">
+				<div id="chart">
+				  <svg></svg>
+				</div>
+			<span id="column">
+			</span>
 		</div>
 	</div>
 </body>
+
+<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="nvtooltip.js"></script>
+<script src="d3legend.js"></script> 
+<script src="d3line.js"></script> 
+<script src="d3linewithlegend.js"></script> 
+<script src="graph.js"></script>
 
 </html>
