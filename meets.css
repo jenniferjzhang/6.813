@@ -55,6 +55,17 @@
 	margin-top: 25px;
 }
 
+.dashboard-content-top {
+	position: relative;
+	display: inline-block;
+	height: 40%;
+	width: 60%;
+	top: 10%;
+	float: left;
+	margin-top: 25px;
+}
+
+
 #navigation-home {
 	font-family: "Raleway";
 	font-size: 24pt;
