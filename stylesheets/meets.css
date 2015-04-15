@@ -27,16 +27,29 @@ h2 {
 }
 
 .dashboard-groups {
-	position: absolute;
+	position: relative;
 	display: inline-block;
 	height: 90%;
 	width: 20%;
 	top: 10%;
-	background-image: url('../diagonales_decalees.png');
-	background-repeat: repeat;
 	margin-top: 40px;
 	padding-left: 10px;
 	border-right: 1px solid #E8E8E8;
+	float:left;
+	overflow: auto;
+}
+
+.dashboard-times {
+	position: relative;
+	display: inline-block;
+	height: 90%;
+	width: 20%;
+	top: 10%;
+	background-color: white;
+	margin-top: 40px;
+	padding-left: 5px;
+	padding-right: 5px;
+	float: left;
 }
 
 .dashboard-content {
@@ -48,6 +61,17 @@ h2 {
 	left: 20%;
 	margin-top: 40px;
 }
+
+.dashboard-content-top {
+	position: relative;
+	display: inline-block;
+	height: 40%;
+	width: 60%;
+	top: 10%;
+	float: left;
+	margin-top: 40px;
+}
+
 
 #navigation-home {
 	font-family: "Raleway";
@@ -154,4 +178,10 @@ h2 {
 
 .img-container img {
 	width: 100%;
+}
+
+a {
+  font-family: "Raleway";
+  font-size: 14pt;
+  color: #CC0300;
 }

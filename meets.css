@@ -41,7 +41,6 @@
 	margin-top: 25px;
 	padding-left: 5px;
 	padding-right: 5px;
-	border-right: 1px solid #E8E8E8;
 	float: left;
 }
 
@@ -101,4 +100,10 @@
 	font-size: 18pt;
 	background-color: purple;
 	padding: 5px 5px;
+}
+
+a {
+  font-family: "Raleway";
+  font-size: 18pt;
+  color: #CC0300;
 }
