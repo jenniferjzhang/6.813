@@ -1,8 +1,81 @@
-.navbar {
+
+
+.dashboard-wrapper{
+	position: absolute;
+	height: 100%;
 	width: 100%;
-	
+	background-color: white;
+	margin: 0 auto;
 }
 
-.navbar-mode > li {
-	display: inline;
+.dashboard-navigation {
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	background-color: blue;
+	display: block;
+}
+
+.dashboard-groups {
+	position: absolute;
+	display: inline-block;
+	height: 90%;
+	width: 20%;
+	top: 10%;
+	background-color: white;
+	margin-top: 25px;
+	padding-left: 10px;
+	border-right: 1px solid #E8E8E8;
+}
+
+.dashboard-content {
+	position: absolute;
+	display: inline-block;
+	height: 90%;
+	width: 80%;
+	top: 10%;
+	left: 20%;
+	margin-top: 25px;
+}
+
+#navigation-home {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 20%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+
+}
+
+#navigation-link {
+	font-family: "Raleway";
+	font-size: 18pt;
+	height: 90%;
+	width: 39.5%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	text-transform: uppercase;
+	text-align: center;
+} 
+
+
+.ui.vertical.menu {
+	width: 90%;
+	border-radius: 0px;
+}
+
+#group {
+	font-family: "Raleway";
+	font-size: 18pt;
+	background-color: purple;
+	padding: 5px 5px;
+}
+
+.chart-container {
+	width: 90%;
+	margin: 0 auto;
 }

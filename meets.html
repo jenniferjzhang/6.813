@@ -6,28 +6,37 @@
 
 <html>
 <head>
-	<title> TRAK - Meets </title>
+	<title> TITLE </title>
 
 	<!-- Load style sheets -->
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.css" />
 	<link rel="stylesheet" type="text/css" href="meets.css" />
+
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
-<div class="wrapper">
-	<div class="navbar">
-		<ul class="navbar-mode">
-			<li>Athletes</li>
-			<li>Meets</li>
-		</ul>
+	<div class = "dashboard-wrapper">
+		<div class = "dashboard-navigation">
+			<div class = "ui menu">
+				<a class = "item" id = "navigation-home" href = "#">Trck</a>
+				<a class = "item" id = "navigation-link" href = "dashboard.html">Athlete Performance</a>
+				<a class = "active item" id = "navigation-link" href = "#">Meet Planner</a>
+			</div>
+		</div>
+		<div class = "dashboard-groups">
+			<h2>Groups</h2>
+			<div class = "ui vertical menu">
+				<a class = "active red item" href = "#">Male Sprinters</a>
+				<a class = "item" href = "#">Female Sprinters</a>
+			</div>
+		</div>
+		<div class = "dashboard-content">
+		</div>
 	</div>
-	<div class="season-schedule">
-	</div>
-	<div class="dayof-schedule">
-	</div>
-	<div
-</div>
 </body>
 
 </html>
