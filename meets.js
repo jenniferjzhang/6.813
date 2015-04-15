@@ -3,6 +3,7 @@ var timesTableHtml = '<div class = "dashboard-times"> <table class="ui table" id
 
 $(document).ready(function() {
     $(".dashboard-content-top").addClass('hidden').hide();
+    $(".dashboard-content-bottom").addClass('hidden').hide();
     $(".dashboard-times").addClass('hidden').hide();
 
     $("#groups").click(function() {
@@ -23,13 +24,46 @@ $(document).ready(function() {
         			.addClass('hidden')
        	 			.removeClass('visible');
 
+       	 		$('.dashboard-content-bottom')
+	        		.transition('slide right')
+        			.addClass('hidden')
+       	 			.removeClass('visible');
+
+
+       	 		$('.dashboard-times')
+	      			.transition('slide right')
+       	 			.addClass('hidden')
+	      			.removeClass('visible')
+	      			.css('border', 'none');
+/*
+       	 		$('.dashboard-times')
+	      			.transition('slide right')
+       	 			.addClass('hidden')
+	      			.removeClass('visible')
+	      			.css('border', 'none');*/
+
+	        }/* else {/*
+	        	$('.dashboard-times')
+	            	.transition('slide right')
+	        		.addClass('hidden')
+	      	    	.removeClass('visible')
+	     	    	.css('border', 'none');
+	        }*/
+
+	        /*if ($(".dashboard-content-bottom").hasClass('visible')) {
+	        	
+	        	$('.dashboard-content-bottom')
+	        		.transition('slide right')
+        			.addClass('hidden')
+       	 			.removeClass('visible');
+
        	 		$('.dashboard-times')
 	      			.transition('slide right')
        	 			.addClass('hidden')
 	      			.removeClass('visible')
 	      			.css('border', 'none');
 
-	        } else {
+	        } */else {
 	        	$('.dashboard-times')
 	            	.transition('slide right')
 	        		.addClass('hidden')
@@ -43,6 +77,9 @@ $(document).ready(function() {
     });
     $(".dashboard-times").click(function() {
         $('.dashboard-content-top').transition('slide right')
+        .removeClass('hidden')
+        .addClass('visible');
+        $('.dashboard-content-bottom').transition('slide right')
         .removeClass('hidden')
         .addClass('visible');
     });
