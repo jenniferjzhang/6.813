@@ -1,4 +1,15 @@
+h1 {
+	font-family: "Raleway";
+	font-size: 28pt;
+	color: #CC0300;
+}
 
+h2 {
+	font-family: "Raleway";
+	font-size: 18pt;
+	color: #CC0300;
+
+}
 
 .dashboard-wrapper{
 	position: absolute;
@@ -54,7 +65,7 @@
 	font-family: "Raleway";
 	font-size: 18pt;
 	height: 90%;
-	width: 39.5%;
+	width: 40%;
 	background-color: white;
 	display: inline-block;
 	vertical-align: middle;
