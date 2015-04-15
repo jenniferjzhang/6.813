@@ -34,7 +34,7 @@ h2 {
 	top: 10%;
 	background-image: url('../diagonales_decalees.png');
 	background-repeat: repeat;
-	margin-top: 25px;
+	margin-top: 40px;
 	padding-left: 10px;
 	border-right: 1px solid #E8E8E8;
 }
@@ -46,7 +46,7 @@ h2 {
 	width: 80%;
 	top: 10%;
 	left: 20%;
-	margin-top: 25px;
+	margin-top: 40px;
 }
 
 #navigation-home {
