@@ -30,7 +30,6 @@ $(document).ready(function() {
     .call(chart);
 
 
-
   chart.dispatch.on('showTooltip', function(e) {
   var offset = $('#chart').offset(), // { left: 0, top: 0 }
         left = e.pos[0] + offset.left,

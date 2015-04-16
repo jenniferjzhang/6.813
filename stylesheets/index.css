@@ -6,19 +6,20 @@ body {
 	background-image: url('../img/diagonales_decalees.png');
 	background-repeat: repeat;
 	font-family: "Open Sans";
-	color: black;
+	color: white;
 }
 
 h1 {
 	font-family: "Raleway";
 	font-size: 28pt;
-	color: #CC0300;
+	color: white;
 
 }
 
 h2 {
 	font-family: "Raleway";
 	font-size: 18pt;
+	color: white;
 
 }
 
@@ -69,7 +70,7 @@ input {
 .login {
     margin: 0 auto;
     width: 30%;
-    background-color: white;
+    background-color: #CC0300;
     padding: 10px 10px;
     vertical-align: middle;
     text-align: center;
@@ -79,7 +80,7 @@ input {
 
 #login-title {
 	width: 100%;
-	border-bottom: 1px solid #CC0300;
+	border-bottom: 1px solid white;
 	padding: 2px 0px;
 	text-align: center;
 }
