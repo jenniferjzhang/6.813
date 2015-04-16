@@ -3,8 +3,6 @@ function log(text) {
   return text;
 }
 
-
-
 $(document).ready(function() {
 
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
@@ -25,6 +23,7 @@ $(document).ready(function() {
     .call(chart);
 
 
+
   chart.dispatch.on('showTooltip', function(e) {
   var offset = $('#chart').offset(), // { left: 0, top: 0 }
         left = e.pos[0] + offset.left,
@@ -36,7 +35,11 @@ $(document).ready(function() {
                   '<span class="value">Week ' + (e.point[0]+1) + ': ' + formatter(e.point[1]) + '</span>' +
                   '</p>';
 
-    nvtooltip.show([left, top], content);
+    var source   = $("#workout-template").html();
+    var template = Handlebars.compile(source);
+    var context = {week: (e.point[0]+1)};
+    var content    = template(context);
+
     $('#column').html(content);
   });
 
@@ -67,7 +70,7 @@ $(document).ready(function() {
   function width(margin) {
     var w = $('.dashboard-content').width() - 20;
     var width = ( (w - margin.left - margin.right - 20) < 0 ) ? margin.left + margin.right + 2 : w;
-    return width*0.7;
+    return width*0.5;
   }
 
   function height(margin) {
@@ -75,7 +78,7 @@ $(document).ready(function() {
 
     var height = ( h - margin.top - margin.bottom - 20 < 0 ) ? 
               margin.top + margin.bottom + 2 : h;
-    return height * 0.8;
+    return height * 0.5;
   }
 
 
