@@ -70,6 +70,8 @@ h2 {
 	top: 10%;
 	float: left;
 	margin-top: 40px;
+	padding-bottom: 20px;
+	overflow: auto;
 }
 
 .dashboard-content-bottom {
