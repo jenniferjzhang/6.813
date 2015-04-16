@@ -1,3 +1,10 @@
+/**********************
+Heavily borrowed from http://bl.ocks.org/bobmonteverde/2070123
+*********************/
+
+
+
+
 function log(text) {
   if (console && console.log) console.log(text);
   return text;
