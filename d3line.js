@@ -130,7 +130,7 @@ function d3Line() {
 
 
       var lines = wrap.select('.lines').selectAll('.line')
-          .data(function(d) { return d }, function(d) { return d.label });
+          .data(function(d) { return d }, function(d) { return d.label })
       lines.enter().append('g')
           .style('stroke-opacity', 1e-6)
           .style('fill-opacity', 1e-6);
@@ -145,15 +145,21 @@ function d3Line() {
       d3.transition(lines)
           .style('stroke-opacity', 1)
           .style('fill-opacity', .5);
+      lines.on('mouseover', function(d, i) {  
+        d3.select('.line-'+i).classed('hover', true);
+      }).on('mouseout', function(d, i) {
+        d3.select('.line-'+i).classed('hover', false);
+      });;
 
 
       var paths = lines.selectAll('path')
-          .data(function(d, i) { return [d.data] });
+          .data(function(d, i) { return [d.data] })
+          ;
       paths.enter().append('path')
           .attr('d', d3.svg.line()
             .x(function(d) { return x0(d[0]) })
             .y(function(d) { return y0(d[1]) })
-          );
+          )
       paths.exit().remove();
       d3.transition(paths)
           .attr('d', d3.svg.line()

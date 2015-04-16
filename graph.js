@@ -7,11 +7,11 @@ function log(text) {
 
 $(document).ready(function() {
 
-  var margin = {top: 30, right: 10, bottom: 50, left: 60},
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
     chart = d3LineWithLegend()
             .xAxis.label('Workout week')
-            .width(900)
-            .height(500)
+            .width(width(margin))
+            .height(height(margin))
             .yAxis.label('Time (s)');
     chart.xAxis.tickFormat(function(d, i){
         return (Math.floor(d) == d) ? "Week " + (d + 1) : ""
@@ -20,9 +20,9 @@ $(document).ready(function() {
       .datum(generateData())
 
   svg.transition().duration(500)
-      .attr('width', 900)
-      .attr('height', 500)
-      .call(chart);
+    .attr('width', width(margin))
+    .attr('height', height(margin))
+    .call(chart);
 
 
   chart.dispatch.on('showTooltip', function(e) {
@@ -54,27 +54,28 @@ $(document).ready(function() {
       .width(width(margin))
       .height(height(margin));
 
-    d3.select('#chart svg')
-      .attr('width', 500)
-      .attr('height', 300)
+    d3.select('#test1 svg')
+      .attr('width', width(margin))
+      .attr('height', height(margin))
       .call(chart);
 
-    });
+  });
 
 
 
 
   function width(margin) {
-    var w = $(window).width() - 20;
-
-    return ( (w - margin.left - margin.right - 20) < 0 ) ? margin.left + margin.right + 2 : w;
+    var w = $('.dashboard-content').width() - 20;
+    var width = ( (w - margin.left - margin.right - 20) < 0 ) ? margin.left + margin.right + 2 : w;
+    return width*0.7;
   }
 
   function height(margin) {
-    var h = $(window).height() - 20;
+    var h = $('.dashboard-content').height() - 20;
 
-    return ( h - margin.top - margin.bottom - 20 < 0 ) ? 
+    var height = ( h - margin.top - margin.bottom - 20 < 0 ) ? 
               margin.top + margin.bottom + 2 : h;
+    return height * 0.8;
   }
 
 
