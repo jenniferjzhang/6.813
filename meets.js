@@ -155,6 +155,16 @@ $(document).ready(function() {
           return d;
         }
     });
+
+    $(".button.green").click(function() {
+    	$(this).removeClass("green").addClass("red")
+    	.find(".plus").addClass("minus").removeClass("plus");
+    });
+
+    $(".button.red").click(function() {
+    	$(this).removeClass("red").addClass("green")
+    	.find(".minus").addClass("plus").removeClass("minus");
+    });
 });
 
 
