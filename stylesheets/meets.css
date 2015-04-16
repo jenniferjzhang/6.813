@@ -53,7 +53,7 @@ h2 {
 }
 
 .dashboard-content {
-	position: absolute;
+	position: relative;
 	display: inline-block;
 	height: 90%;
 	width: 80%;
@@ -70,8 +70,35 @@ h2 {
 	top: 10%;
 	float: left;
 	margin-top: 40px;
+	padding-bottom: 20px;
+	overflow: auto;
 }
 
+.dashboard-content-bottom {
+	position: relative;
+	display: inline-block;
+	height: 40%;
+	width: 60%;
+	top: 10%;
+	float: left;
+	margin-top: 40px;	
+}
+
+.content-wrapper {
+
+}
+
+.predicted-results-table {
+	position:relative;
+	float: left;
+	width:50%;
+}
+
+.predicted-results-graph {
+	position: relative;
+	float: right;
+	width: 50%;
+}
 
 #navigation-home {
 	font-family: "Raleway";
