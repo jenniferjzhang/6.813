@@ -102,12 +102,13 @@ $(document).ready(function() {
             .orient("left")
             .ticks(10, "");
 
+
+        $(".predicted-results-graph").empty()
         var svg = d3.select(".predicted-results-graph").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
           .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
           x.domain(["MIT", "BU", "Harvard", "Tufts"]);
 
           y.domain([0, 18]);
@@ -156,15 +157,19 @@ $(document).ready(function() {
         }
     });
 
-    $(".button.green").click(function() {
-    	$(this).removeClass("green").addClass("red")
-    	.find(".plus").addClass("minus").removeClass("plus");
+    $(".button.color").click(function() {
+
+      if ($(this).hasClass('red')) {
+        $(this).removeClass("red").addClass("green")
+      .find(".minus").addClass("plus").removeClass("minus");
+      } else {
+        $(this).removeClass("green").addClass("red")
+        .find(".plus").addClass("minus").removeClass("plus");
+      }
+
     });
 
-    $(".button.red").click(function() {
-    	$(this).removeClass("red").addClass("green")
-    	.find(".minus").addClass("plus").removeClass("minus");
-    });
+
 });
 
 
