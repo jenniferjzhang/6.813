@@ -17,11 +17,10 @@ h2 {
 	width: 100%;
 	background-color: white;
 	margin: 0 auto;
+	overflow: auto;
 }
 
 .dashboard-navigation {
-	position: absolute;
-	height: 10%;
 	width: 100%;
 	display: block;
 }
@@ -31,8 +30,6 @@ h2 {
 	display: inline-block;
 	height: 90%;
 	width: 20%;
-	top: 10%;
-	margin-top: 40px;
 	padding-left: 10px;
 	border-right: 1px solid #E8E8E8;
 	float:left;
@@ -211,4 +208,13 @@ a {
   font-family: "Raleway";
   font-size: 14pt;
   color: #CC0300;
+}
+
+.breadcrumb {
+  font-family: "Raleway";
+  font-size: 14pt;
+  color: #CC0300;
+  width: 100%;
+  padding-left: 10px;
+
 }
