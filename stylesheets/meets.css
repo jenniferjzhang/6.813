@@ -26,7 +26,7 @@ h2 {
 	display: block;
 }
 
-.dashboard-groups {
+.dashboard-meets {
 	position: relative;
 	display: inline-block;
 	height: 90%;
@@ -39,7 +39,7 @@ h2 {
 	overflow: auto;
 }
 
-.dashboard-times {
+.dashboard-schedule {
 	position: relative;
 	display: inline-block;
 	height: 90%;
@@ -124,7 +124,7 @@ h2 {
 } 
 
 
-.ui.vertical.menu {
+/*.ui.vertical.menu {
 	width: 97%;
 	font-family: "Raleway";
 }
@@ -170,7 +170,7 @@ h2 {
 	font-size: 12pt;
 	vertical-align: middle;
 
-}
+}*/
 
 #group {
 	font-family: "Raleway";

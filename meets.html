@@ -15,65 +15,44 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
 	
 </head>
 
 <body>
-	<div class = "dashboard-wrapper">
-		<div class = "dashboard-navigation">
-			<div class = "ui menu">
-				<a class = "item" id = "navigation-home" href = "#">BOLT</a>
-				<a class = "item" id = "navigation-link" href = "dashboard.html">Athlete Performance</a>
-				<a class = "active item" id = "navigation-link" href = "#">Meet Planner</a>
+	<div class="dashboard-wrapper">
+		<div class="dashboard-navigation">
+			<div class="ui menu">
+				<a class="item" id="navigation-home" href="#">BOLT</a>
+				<a class="item" id="navigation-link" href="dashboard.html">Athlete Performance</a>
+				<a class="active item" id ="navigation-link" href ="#">Meet Planner</a>
 			</div>
 		</div>
-		<div class = "dashboard-groups">
-			<table class="ui table" id="groups">
-				<tbody>
+		<div class="dashboard-meets">
+			<script id="meets-template" type="text/x-handlebars-template">
+				<table class="ui table" id="meets">
 					<thead>
 						<tr>
 							<th class="ten wide">Meet</th>
 							<th class="five wide">Date</th>
 						</tr>
 					</thead>
-					<tr>
-						<td><a href = "#">Engineer's Cup</a></td>
-						<td>4/4</td>
-					</tr>
-					<tr>
-						<td><a href = "#">Colby Invitational</a></td>
-						<td>4/11</td>
-					</tr>
-					<tr>
-						<td><a href = "#">Sean Collier Invitational</a></td>
-						<td>4/18</td>
-					</tr>
-					<tr>
-						<td><a href = "#">NEWMAC Championship</a></td>
-						<td>4/25</td>
-					</tr>
-					<tr>
-						<td><a href = "#">New England Division III Championship</a></td>
-						<td>4/30-5/2</td>
-					</tr>
-					<tr>
-						<td><a href = "#">NEICAAA Championship</a></td>
-						<td>5/7-5/9</td>
-					</tr>
-					<tr>
-						<td><a href = "#">ECAC Division III Championship</a></td>
-						<td>5/14-5/15</td>
-					</tr>
-					<tr>
-						<td><a href = "#">NCAA Division III Championship</a></td>
-						<td>5/21-5/23</td>
-					</tr>
-				</tbody>
-			</table>
+					<tbody>
+						{{#each this}}
+							<tr>
+								<td><a href="#">{{name}}</a></td>
+								<td>{{date}}</td>
+							</tr>
+						{{/each}}
+						
+					</tbody>
+				</table>
+			</script>
 		</div>
 
-		<div class = "dashboard-times"> 
-			<table class="ui table" id="times"> 
+		<div class="dashboard-schedule"> 
+			<table class="ui table" id="schedule"> 
 				<tbody> 
 					<thead> 
 						<tr> 
@@ -82,42 +61,42 @@
 						</tr> 
 					</thead> 
 					<tr> 
-						<td><a href = "#">Pole Vault</a></td> 
+						<td><a href="#">Pole Vault</a></td> 
 						<td>3:30 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">Long Jump</a></td> 
+						<td><a href="#">Long Jump</a></td> 
 						<td>3:45 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">High Jump</a></td> 
+						<td><a href="#">High Jump</a></td> 
 						<td>4:00 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">Shot Put</a></td> 
+						<td><a href="#">Shot Put</a></td> 
 						<td>4:15 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">4x800m Relay</a></td> 
+						<td><a href="#">4x800m Relay</a></td> 
 						<td>4:30 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">100m</a></td> 
+						<td><a href="#">100m</a></td> 
 						<td>5:00 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">1600m</a></td> 
+						<td><a href="#">1600m</a></td> 
 						<td>5:05 PM</td> 
 					</tr> 
 					<tr> 
-						<td><a href = "#">4x100m Relay</a></td> 
+						<td><a href="#">4x100m Relay</a></td> 
 						<td>5:20 PM</td> 
 					</tr> 
 				</tbody> 
 			</table> 
 		</div>
 		
-		<div class = "dashboard-content-top"> 
+		<div class="dashboard-content-top"> 
 			<table class="ui table" id="content-top"> 
 				<tbody> 
 					<thead> 
@@ -133,7 +112,7 @@
 							<div class="ui icon green button">
   								<i class="plus icon"></i>
 							</div>
-							<a href = "#">Zachary Johnson</a>
+							<a href="#">Zachary Johnson</a>
 						</td> 
 						<td>1:51:000</td> 
 						<td>1:51:000</td> 
@@ -143,7 +122,7 @@
 						<td><div class="ui icon color green button">
   								<i class="plus icon"></i>
 							</div>
-							<a href = "#">Quackary Duckson</a></td> 
+							<a href="#">Quackary Duckson</a></td> 
 						<td>1:54:000</td> <td>1:54:000</td> 
 						<td>8</td> 
 					</tr> 
@@ -151,7 +130,7 @@
 						<td><div class="ui icon color green button">
   								<i class="plus icon"></i>
 							</div>
-							<a href = "#">Jachary Zohnson</a></td> 
+							<a href="#">Jachary Zohnson</a></td> 
 						<td>2:01:156</td> 
 						<td>1:55:846</td> 
 						<td>6</td> 
@@ -160,7 +139,7 @@
 						<td><div class="ui icon color green button">
   								<i class="plus icon"></i>
 							</div>
-							<a href = "#">Machary Lohnson</a></td> 
+							<a href="#">Machary Lohnson</a></td> 
 						<td>2:03:654</td> 
 						<td>1:57:315</td> 
 						<td>5</td> 
@@ -169,7 +148,7 @@
 						<td><div class="ui icon color green button">
   								<i class="plus icon"></i>
 							</div>
-							<a href = "#">Lachary Mohnson</a></td> 
+							<a href="#">Lachary Mohnson</a></td> 
 						<td>2:04:507</td> 
 						<td>1:57:985</td> 
 						<td>4</td> 
@@ -191,31 +170,31 @@
 							</tr> 
 						</thead> 
 						<tr> 
-							<td><a href = "#">Zachary Johnson</a></td> 
+							<td><a href="#">Zachary Johnson</a></td> 
 							<td>1:51:000</td> 
 							<td>10</td> 
 							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href = "#">Quackary Duckson</a></td> 
+							<td><a href="#">Quackary Duckson</a></td> 
 							<td>1:54:000</td> 
 							<td>8</td> 
 							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href = "#">Jachary Zohnson</a></td> 
+							<td><a href="#">Jachary Zohnson</a></td> 
 							<td>2:01:156</td> 
 							<td>6</td> 
 							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href = "#">Machary Lohnson</a></td> 
+							<td><a href="#">Machary Lohnson</a></td> 
 							<td>2:03:654</td> 
 							<td>5</td> 
 							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href = "#">Lachary Mohnson</a></td> 
+							<td><a href="#">Lachary Mohnson</a></td> 
 							<td>2:04:507</td> 
 							<td>4</td> 
 							<td>MIT</td>
@@ -232,9 +211,12 @@
 	</div>
 </body>
 
+<script type="text/javascript" src="handlebars-v3.0.0.js"></script>
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="bower_components/semantic-ui/dist/semantic.min.js"></script>
-<script src="meets.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="meets.js"></script>
+
 <style>
 
 .axis {
