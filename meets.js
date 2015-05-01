@@ -10,8 +10,11 @@ $(document).ready(function() {
     $(".dashboard-content-bottom").addClass('hidden').hide();
     $(".dashboard-schedule").addClass('hidden').hide();
 
-    $("#meets").click(function() {
-
+    $("#meets a").click(function() {
+      
+      /*$("a").click(function() {
+        console.log($(this).text());
+      });*/
 
         if ($('.dashboard-schedule').hasClass('hidden')) {
         	//
@@ -80,7 +83,7 @@ $(document).ready(function() {
 
 
     });
-    $(".dashboard-schedule").click(function() {
+    $(".dashboard-schedule a").click(function() {
         $('.dashboard-content-top').transition('slide right')
         .removeClass('hidden')
         .addClass('visible');
