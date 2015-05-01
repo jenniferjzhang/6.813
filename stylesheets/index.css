@@ -3,8 +3,6 @@ For general overall style only
 */
 
 body {
-	background-image: url('../img/diagonales_decalees.png');
-	background-repeat: repeat;
 	font-family: "Open Sans";
 	color: white;
 }
@@ -33,29 +31,33 @@ a {
 	text-decoration: none;
 }
 
-input[name = "login"] {
-	border: 1px solid #CC0300;
+#login {
+/*	border: 1px solid #CC0300;
 	background-color: #FFFFFF;
-	min-width: 70%;
-	height: 30px;
+	width: 70%;
+	height: 40px;
 	font-family: "Open Sans";
-	font-size: 12pt;
+	font-size: 12pt;*/
+	color: #CC0300;
 }
 
 input {
 	margin: 2px;
 	border: 1px solid #E6E6E6;
 	color: #707070;
-	min-width: 70%;
-	height: 20px;
+	width: 70%;
+	height: 30px;
 	font-family: "Open Sans";
 	font-size: 12pt;
 	padding: 5px 5px;
+
 }
 
 .wrapper {
     display: table;
     position: absolute;
+	background-image: url('../img/concrete_seamless.png');
+	background-repeat: repeat;
     top: 0px;
     left: 0px;
     height: 100%;

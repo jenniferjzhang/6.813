@@ -13,6 +13,8 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="bower_components/semantic-ui/dist/semantic.css" />
+
 
 </head>
 
@@ -24,13 +26,22 @@
 			<div id = "login-title"><h1>BOLT</h1></div>
 
 			<h2> Login </h2>
+			<form class = "ui form">
+				<div class = "field">
+					<input name = "username" type = "text" placeholder = "Email"></input>
+				</div>
+				<div class = "field">
+					<input name = "password" type = "password" placeholder="Password"></input>
+				</div>
 
-			<input name = "username" type = "text" placeholder = "Email"></input><br>
-			<input name = "password" type = "password" placeholder="Password"></input><br>
+				<div class = "ui white button">
+					<a href ="dashboard.html"  id = "login">Login</a>
+				</div>
+				<div class = "ui white button">
+					<a href = "#" id = "create-account" >Signup</a>
+				</div>
 
-			<input name = "login" type = "submit" value = "Login" onclick="window.location='dashboard.html';"></input><br>
-			OR <br>
-			<a href = "#" id = "create-account" > Create an Account</a><br>
+			</form>
 
 		</div>
 	</div>
