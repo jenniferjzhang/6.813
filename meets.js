@@ -1,5 +1,6 @@
 var contentTopHtml = '<div class = "dashboard-content-top"> <table class="ui table"> <tbody> <thead> <tr> <th class="four wide">Athlete Name</th> <th class="four wide">Season Best</th> <th class="three wide">Personal Record</th> <th class="two wide">Predicted Points</th> </tr> </thead> <tr> <td><a href = "#">Zachary Johnson</a></td> <td>1:51:000</td> <td>1:51:000</td> <td>10</td> </tr> <tr> <td><a href = "#">Quackary Duckson</a></td> <td>1:54:000</td> <td>1:54:000</td> <td>8</td> </tr> <tr> <td><a href = "#">Jachary Zohnson</a></td> <td>2:01:156</td> <td>1:55:846</td> <td>6</td> </tr> <tr> <td><a href = "#">Machary Lohnson</a></td> <td>2:03:654</td> <td>1:57:315</td> <td>5</td> </tr> <tr> <td><a href = "#">Lachary Mohnson</a></td> <td>2:04:507</td> <td>1:57:985</td> <td>4</td> </tr> </tbody> </table> </div>';
 var scheduleTableHtml = '<div class = "dashboard-schedule"> <table class="ui table" id="schedule"> <tbody> <thead> <tr> <th class="ten wide">Event</th> <th class="five wide">Time</th> </tr> </thead> <tr> <td><a href = "#">Pole Vault</a></td> <td>3:30 PM</td> </tr> <tr> <td><a href = "#">Long Jump</a></td> <td>3:45 PM</td> </tr> <tr> <td><a href = "#">High Jump</a></td> <td>4:00 PM</td> </tr> <tr> <td><a href = "#">Shot Put</a></td> <td>4:15 PM</td> </tr> <tr> <td><a href = "#">4x800m Relay</a></td> <td>4:30 PM</td> </tr> <tr> <td><a href = "#">100m</a></td> <td>5:00 PM</td> </tr> <tr> <td><a href = "#">1600m</a></td> <td>5:05 PM</td> </tr> <tr> <td><a href = "#">4x100m Relay</a></td> <td>5:20 PM</td> </tr> </tbody> </table> </div>'
+var chevronIcon = "<i class='right chevron icon divider'></i>";
 
 $(document).ready(function() {
     var source = $("#meets-template").html();
@@ -9,22 +10,29 @@ $(document).ready(function() {
     $(".dashboard-content-top").addClass('hidden').hide();
     $(".dashboard-content-bottom").addClass('hidden').hide();
     $(".dashboard-schedule").addClass('hidden').hide();
+    $("#chosen-meet").addClass('hidden').hide();
+    $(".chevron").addClass('hidden').hide();
+    $("#event").addClass('hidden').hide();
 
     $("#meets a").click(function() {
       
-      /*$("a").click(function() {
-        console.log($(this).text());
-      });*/
-
         if ($('.dashboard-schedule').hasClass('hidden')) {
-        	//
+        	//If schedule is hidden, show on click
 	       $('.dashboard-schedule')
 		        .transition('slide right')
 		        .removeClass('hidden')
 	    	    .addClass('visible')
 	        	.css('border', '1px solid #E8E8E8');
-        } else if  ($('.dashboard-schedule').hasClass('visible')) {
 
+          $("#divider1").show();
+          $("#chosen-meet")
+            .html($(this).text())
+            .show()
+            .addClass("active");
+          $("#meet-title").removeClass('active');
+
+        } else if  ($('.dashboard-schedule').hasClass('visible')) {
+          //times are visible
 	        if ($(".dashboard-content-top").hasClass('visible')) {
 	        	
 	        	$('.dashboard-content-top')
@@ -43,53 +51,51 @@ $(document).ready(function() {
        	 			.addClass('hidden')
 	      			.removeClass('visible')
 	      			.css('border', 'none');
-/*
-       	 		$('.dashboard-schedule')
-	      			.transition('slide right')
-       	 			.addClass('hidden')
-	      			.removeClass('visible')
-	      			.css('border', 'none');*/
 
-	        }/* else {/*
+            $("#divider2").hide();
+            $("#divider1").hide();
+            $("#event")
+              .hide()
+              .removeClass("active");
+            $("#chosen-meet").hide().removeClass("active");
+            $("#meet-title").addClass('active');
+
+          } else {
+
 	        	$('.dashboard-schedule')
 	            	.transition('slide right')
-	        		.addClass('hidden')
+	        		  .addClass('hidden')
 	      	    	.removeClass('visible')
-	     	    	.css('border', 'none');
-	        }*/
+	     	    	  .css('border', 'none');
 
-	        /*if ($(".dashboard-content-bottom").hasClass('visible')) {
-	        	
-	        	$('.dashboard-content-bottom')
-	        		.transition('slide right')
-        			.addClass('hidden')
-       	 			.removeClass('visible');
-
-       	 		$('.dashboard-schedule')
-	      			.transition('slide right')
-       	 			.addClass('hidden')
-	      			.removeClass('visible')
-	      			.css('border', 'none');
-
-	        } */else {
-	        	$('.dashboard-schedule')
-	            	.transition('slide right')
-	        		.addClass('hidden')
-	      	    	.removeClass('visible')
-	     	    	.css('border', 'none');
+            $("#divider1").hide();
+            $("#divider2").hide();
+            $("#chosen-meet")
+              .hide()
+              .removeClass("active");
+            $("#meet-title").addClass('active');
 	        }
         }
  
 
 
     });
+
     $(".dashboard-schedule a").click(function() {
+      if ($(".dashboard-content-top").hasClass('hidden')) { 
         $('.dashboard-content-top').transition('slide right')
         .removeClass('hidden')
         .addClass('visible');
         $('.dashboard-content-bottom').transition('slide right')
         .removeClass('hidden')
         .addClass('visible');
+
+        $("#divider2").show();
+        $("#event")
+            .html($(this).text())
+            .show()
+            .addClass("active");
+        $("#chosen-meet").removeClass('active');
 
         var margin = {top: 20, right: 0, bottom: 30, left: 30},
             width = $('.predicted-results-graph').width() - margin.left - margin.right,
@@ -163,6 +169,21 @@ $(document).ready(function() {
           d.frequency = +d.frequency;
           return d;
         }
+      } else {
+        $('.dashboard-content-top').transition('slide right')
+        .removeClass('visible')
+        .addClass('hidden');
+        $('.dashboard-content-bottom').transition('slide right')
+        .removeClass('visible')
+        .addClass('hidden');
+
+        $("#divider2").hide();
+        $("#event")
+            .html($(this).text())
+            .hide()
+            .removeClass("active");
+        $("#chosen-meet").addClass('active');
+      }
     });
 
     $(".button.color").click(function() {
