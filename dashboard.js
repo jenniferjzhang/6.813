@@ -46,7 +46,7 @@
 	});
 
 	$('#workouts-graph').on("click", function() {
-		$('#chart-title').html("Workout Times");
+		$('#chart-title').html("% of Workout Windows Hit");
 		$('#workouts-graph').removeClass("item");
 		$('#workouts-graph').addClass("active item");
 
