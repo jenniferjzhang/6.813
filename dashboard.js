@@ -2,8 +2,6 @@
 		$('.hidden').hide();
 	}
 
-
-
 	$('.group-title').on("click", function() {
 		console.log($(this).attr('id'));
 		if ($(this).attr('id') === "male-sprinters") {
@@ -36,6 +34,24 @@
 
 			}
 		};
+	});
+
+	$('#meets-graph').on("click", function() {
+		$('#chart-title').html("Meet Times");
+		$('#meets-graph').removeClass("item");
+		$('#meets-graph').addClass("active item");
+
+		$('#workouts-graph').removeClass("active item");
+		$('#workouts-graph').addClass("item");
+	});
+
+	$('#workouts-graph').on("click", function() {
+		$('#chart-title').html("Workout Times");
+		$('#workouts-graph').removeClass("item");
+		$('#workouts-graph').addClass("active item");
+
+		$('#meets-graph').removeClass("active item");
+		$('#meets-graph').addClass("item");
 	});
 
 	// $('#jennifer').on("click", function() {
