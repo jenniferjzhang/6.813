@@ -19,6 +19,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="handlebars-v3.0.0.js"></script>
+	<script type="text/javascript" src="lodash.js"></script>
 
 </head>
 
@@ -62,7 +63,7 @@
 					<a class = "item">Meets</a>
 					<a class = "active item">Workouts</a>
 				</div>
-				<h2 id = "chart-title">Workout Times</h2>
+				<h2 id = "chart-title">% of Workout Windows Hit</h2>
 					<div id="chart">
 					  <svg></svg>
 					</div>
@@ -81,117 +82,37 @@
       <div class="content">
 	    <div class="ui top left attached label">Week {{week}} Workout Summary</div>
 	    <div class="ui center aligned">
-	    	<div class="ui center header">Henry Tareque</div>
+	    	<div class="ui center header">{{athlete}}</div>
 	    </div>
 	    <div class="ui divider"></div>
         <div class="meta">
           <a class="group">Status</a>
         </div>
-        <div>Not feeling so well, a little bit tired from not sleeping the night before.</div>
+        <div>{{status}}</div>
         <div class="meta" style="margin-top: 15px;">
           <a class="group">Performance</a>
         </div>
-        <table class="ui celled table">
-          <thead>
-            <tr style="font-size: 90%">
-              <th>Event</th>
-              <th>Goal windows (best/worst time)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>400m</td>
-              <td>
-	            <span style="float: left; color: green; font-weight: bold;">
-	            --|---
-	            (
-	            </span>
-	            <span style="float: left; opacity: 0.5; font-weight: bold;" >
-	            
-	            <span style="color: black;">-</span>
-	            --------------------
-	            <span style="color: red;">)----</span>
-	            </span>
-              	<br>
-              	<span style="float: left; color: red; font-weight: bold; font-size: 70%">
-                  	&nbsp;
-              		<span style="color: green; font-size: 140%">45s</span>
-              		&nbsp;&nbsp;
-              		<span style="color: green;">55s</span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: black;"></span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: red;">65s</span>
-              	</span>
-              </td>
-            </tr>
-            <tr>
-              <td>400m</td>
-              <td>
-	            <span style="float: left; color: green; font-weight: bold;">
-	            ------
-	            (
-	            </span>
-	            <span style="float: left; opacity: 0.5; font-weight: bold;" >
-	           
-	            ----------
-	            <span style="color: black; opacity: 1;">|</span>
-	            ----------
-	            <span style="color: red;">)----</span>
-	            </span>
-              	<br>
-              	<span style="float: left; color: red; font-weight: bold; font-size: 70%">
-                  	&nbsp;&nbsp;
-              		&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: green;">55s</span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: black;"></span>
-              		&nbsp;
-              		<span style="color: black; font-size: 140%">45s</span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: red;">65s</span>
-              	</span>
-              </td>
-            </tr>
-            <tr>
-              <td>800m</td>
-              <td>
-	            <span style="float: left; color: green; font-weight: bold;">
-	            ------
-	            (
-	            </span>
-	            <span style="float: left; opacity: 0.5; font-weight: bold;" >
-	           
-	            --------------
-	            <span style="color: black; opacity: 1;">|</span>
-	            ------
-	            <span style="color: red;">)----</span>
-	            </span>
-              	<br>
-              	<span style="float: left; color: red; font-weight: bold; font-size: 70%">
-                  	&nbsp;&nbsp;
-              		&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: green;">2:07</span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;&nbsp;&nbsp;
-              		<span style="color: black; font-size: 140%">2:14</span>
-              		&nbsp;&nbsp;&nbsp;&nbsp;
-              		&nbsp;&nbsp;
-              		<span style="color: red;">2:17</span>
-              	</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        {{#if data}}
+	        <table class="ui celled table">
+	          <thead>
+	            <tr style="font-size: 90%">
+	              <th>Event</th>
+	              <th>Did the athlete hit his goal?</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	          	{{#each data}}
+	          		<tr>
+	          		  <td id="graph_event{{@index}}">{{event}}</td>
+	          		  <td id="graph_container{{@index}}" class="graph_td">
+	          		  </td>
+	          		</tr>
+	          	{{/each}}
+	          </tbody>
+	        </table>
+	    {{else}}
+	    	{{time}}
+	    {{/if}}
       </div>
       <div class="extra content">
         <a class="right floated created"></a>

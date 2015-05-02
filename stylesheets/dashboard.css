@@ -11,6 +11,12 @@ h2 {
 
 }
 
+
+.graph_td {
+	padding: 0px !important;
+	margin: 0px;
+}
+
 .dashboard-wrapper{
 	position: absolute;
 	height: 100%;

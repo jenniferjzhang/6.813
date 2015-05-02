@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+body { font: 12px Arial;}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: black;
+    stroke: black;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+</style>
+<body>
+<div id="container" style="height: 36px; width: 202px;"></div>
+<div id="container3" style="height: 48px; width: 202px;"></div>
+</div>
+</body>
+
+<!-- load the d3.js library -->    
+<script src="http://mbostock.github.com/d3/d3.v2.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script>
+
+var container = $('#container');
+draw_graph(container, '2:15', '2:20', '2:15', 0.25)
+
+var container3 = $('#container3');
+draw_sample_graph(container3)
+
+function draw_sample_graph(container) {
+  // Set the dimensions of the canvas / graph
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      width = container.width() - margin.left - margin.right,
+      height = container.height() - margin.top - margin.bottom;
+
+  // Set the ranges
+  var x = d3.time.scale().range([0, width]);
+  var y = d3.scale.linear().range([height, 0]);
+
+  // Define the axes
+  var xAxis = d3.svg.axis().scale(x)
+
+  var yAxis = d3.svg.axis().scale(y).orient("left")
+
+  // Define the line
+  var valueline = d3.svg.line()
+      .x(function(d) { return x(d.date); })
+      .y(function(d) { return y(d.close); });
+      
+  // Adds the svg canvas
+  function transformX(x) {
+    return x * container.width()
+  }
+
+  function transformY(y) {
+    return y * container.height()
+  }
+  var svg = d3.select(container.selector)
+      .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+          .attr("transform", 
+                "translate(" + margin.left + "," + margin.top + ")");
+
+
+  data = [
+  {date: 0, close: 0.5},
+  {date: 1, close: 0.5}
+  ]
+
+  data.forEach(function(d) {
+      d.date = d.date;
+      d.close = d.close;
+  });
+
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  y.domain([0, 1]);
+
+  var rectangle = svg.append("rect")
+      .attr("x", container.width()*0.75)
+      .attr("y", 0)
+      .attr("width", container.width()*0.25)
+      .attr("height", container.height())
+      .style({
+        "fill": "red",
+        "opacity": "0.1"
+      });
+
+  // Add the valueline path.
+  svg.append("path")
+      .attr("class", "line")
+      .attr("d", valueline(data))
+      .style({
+        "stroke": "black",
+        "stroke-width": "0.5"
+      });
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  // Add the Y Axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.25))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            "fill": "green",
+            "font-weight": "bold"})
+          .text("[");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.75))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            "fill": "red",
+            "font-weight": "bold"})
+          .text("]");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.75))
+          .attr("y", transformY(0.4))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'red',
+            "font-size": "80%",
+            "opacity": "0.8"
+            })
+          .text("Worst time");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.25))
+          .attr("y", transformY(0.4))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'green',
+            "font-size": "80%",
+            "opacity": "0.8"
+            })
+          .text("Best time");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.5))
+          .attr("y", transformY(0.2))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'black',
+            "font-size": "80%",
+            "opacity": "0.8"
+            })
+          .text("Time window athlete should hit");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.5))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'black',
+            "font-weight": "bold",
+            "font-size": "120%"
+            })
+          .text("|");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.5))
+          .attr("y", transformY(0.85))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'black',
+            "font-size": "80%",
+            "font-weight": "bold"
+            })
+          .text("Actual time");
+}
+
+function draw_graph(container, t1, t2, t, position) {
+  // Set the dimensions of the canvas / graph
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+      width = container.width() - margin.left - margin.right,
+      height = container.height() - margin.top - margin.bottom;
+
+  // Set the ranges
+  var x = d3.time.scale().range([0, width]);
+  var y = d3.scale.linear().range([height, 0]);
+
+  // Define the axes
+  var xAxis = d3.svg.axis().scale(x)
+
+  var yAxis = d3.svg.axis().scale(y).orient("left")
+
+  // Define the line
+  var valueline = d3.svg.line()
+      .x(function(d) { return x(d.date); })
+      .y(function(d) { return y(d.close); });
+      
+  // Adds the svg canvas
+  function transformX(x) {
+    return x * container.width()
+  }
+
+  function transformY(y) {
+    return y * container.height()
+  }
+  var svg = d3.select(container.selector)
+      .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+          .attr("transform", 
+                "translate(" + margin.left + "," + margin.top + ")");
+
+
+  data = [
+  {date: 0, close: 0.5},
+  {date: 1, close: 0.5}
+  ]
+
+  data.forEach(function(d) {
+      d.date = d.date;
+      d.close = d.close;
+  });
+
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  y.domain([0, 1]);
+
+  var rectangle = svg.append("rect")
+      .attr("x", container.width()*0.75)
+      .attr("y", 0)
+      .attr("width", container.width()*0.25)
+      .attr("height", container.height())
+      .style({
+        "fill": "red",
+        "opacity": "0.1"
+      });
+
+  // Add the valueline path.
+  svg.append("path")
+      .attr("class", "line")
+      .attr("d", valueline(data))
+      .style({
+        "stroke": "black",
+        "stroke-width": "0.5"
+      });
+
+  // Add the X Axis
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  // Add the Y Axis
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.25))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            "fill": "green",
+            "font-weight": "bold"})
+          .text("[");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.75))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            "fill": "red",
+            "font-weight": "bold"})
+          .text("]");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.75))
+          .attr("y", transformY(0.3))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'red',
+            "font-size": "80%",
+            "opacity": "0.4"
+            })
+          .text(t2);
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(0.25))
+          .attr("y", transformY(0.3))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'green',
+            "font-size": "80%",
+            "opacity": "0.4"
+            })
+          .text(t1);
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(position))
+          .attr("y", transformY(0.6))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'black',
+            "font-weight": "bold",
+            "font-size": "120%"
+            })
+          .text("|");
+
+  svg.append("text")      // text label for the x axis
+          .attr("x", transformX(position))
+          .attr("y", transformY(0.95))
+          .style({
+            "text-anchor": "middle",
+            'fill': 'black',
+            "font-size": "100%",
+            "font-weight": "bold"
+            })
+          .text(t);
+}
+
+</script>
+</body>
