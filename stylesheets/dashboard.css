@@ -30,6 +30,8 @@ h2 {
 	height: 10%;
 	width: 100%;
 	display: block;
+	background-image: url('../img/old_moon.png');
+	background-repeat: repeat;
 }
 
 .dashboard-groups {
@@ -38,11 +40,11 @@ h2 {
 	height: 90%;
 	width: 20%;
 	top: 10%;
-	background-image: url('../img/diagonales_decalees.png');
-	background-repeat: repeat;
-	margin-top: 40px;
+	margin-top: 25px;
 	padding-left: 10px;
 	border-right: 1px solid #E8E8E8;
+	background-image: url('../img/old_moon.png');
+	background-repeat: repeat;
 }
 
 .dashboard-content {
@@ -60,7 +62,8 @@ h2 {
 	font-size: 26pt;
 	height: 90%;
 	width: 20%;
-	background-color: white;
+	background-image: url('../img/old_moon.png');
+	background-repeat: repeat;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
@@ -92,7 +95,7 @@ h2 {
 	box-shadow: none;
 	border: 1px solid #CC0300;
 	background-color: white;
-	border-radius: 0.2857rem;
+	border-radius: 2px;
 }
 
 .ui.vertical.menu .active.item:hover {
@@ -103,27 +106,29 @@ h2 {
 	box-shadow: none;
 	border: 1px solid #CC0300;
 	background-color: white;
-	border-radius: 0.2857rem;
+	border-radius: 2px;
 }
 
 .ui.menu .active.item:hover {
 	box-shadow: none;
 	border: 1px solid #CC0300;
 	background-color: white;
-	border-radius: 0.2857rem;
+	border-radius: 2px;
 }
 
 
 .ui.menu > a.item:hover{
 	box-shadow: none;
 	background-color: white;
-	border-radius: 0.2857rem;
+	border-radius: 2px;
 }
 
 
 .ui.vertical.menu .item:not(.dropdown) > .menu > .item {
 	font-size: 12pt;
 	vertical-align: middle;
+	min-height: 50px;
+	border-radius: 2px;
 
 }
 
@@ -152,8 +157,8 @@ h2 {
 }*/
 
 .img-container {
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: 40px;
 	border-radius: 100%;
 	overflow: hidden;
 	display: inline-block;
