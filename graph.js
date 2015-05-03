@@ -295,24 +295,27 @@ function log(text) {
 }
 
 $(document).ready(function() {
-
-  drawMeetGraph();
-
-});
+  drawWorkoutGraph();
+})
 
 function drawMeetGraph() {
+  $('#chart svg').empty();
+  $('#column').empty();
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
     chart = d3LineWithLegend()
-            .xAxis.label('Workout week')
             .width(width(margin))
             .height(height(margin))
             .yAxis.label('Time (s)');
+
     chart.xAxis.tickFormat(function(d, i){
-        return (Math.floor(d) == d) ? "Week " + (d + 1) : ""
+        return (Math.floor(d) == d) ? "Meet " + (d + 1) : ""
     })
   var svg = d3.select('#chart svg')
       .datum(generateMeetData())
-
+  svg.append("text")
+              .attr("text-anchor", "middle")
+              .attr("transform", "translate("+ (width(margin)/2) +","+(height(margin))+")")  // centre below axis
+              .text("Meet");
   svg.transition().duration(500)
     .attr('width', width(margin))
     .attr('height', height(margin))
@@ -345,7 +348,8 @@ function drawMeetGraph() {
       lowerPosition: true,
       athlete: e.series.label,
       status: workout_data[e.seriesIndex].statuses[e.pointIndex],
-      time: e.series.data[e.pointIndex][1]+"s"};
+      time: e.series.data[e.pointIndex][1]+"s",
+      title: "Meet"};
 
     data = [
     ]
@@ -431,9 +435,10 @@ function drawMeetGraph() {
 
 
 function drawWorkoutGraph() {
+  $('#chart svg').empty();
+  $('#column').empty();
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
     chart = d3LineWithLegend()
-            .xAxis.label('Workout week')
             .width(width(margin))
             .height(height(margin))
             .yAxis.label('% of workout windows hit');
@@ -448,6 +453,10 @@ function drawWorkoutGraph() {
 
   var svg = d3.select('#chart svg')
       .datum(generateMeetData())
+  svg.append("text")
+              .attr("text-anchor", "middle")
+              .attr("transform", "translate("+ (width(margin)/2) +","+(height(margin))+")")  // centre below axis
+              .text("Workout week");
   svg.transition().duration(500)
     .attr('width', width(margin))
     .attr('height', height(margin))
@@ -474,7 +483,8 @@ function drawWorkoutGraph() {
     var context = {
       week: (e.pointIndex+1), 
       lowerPosition: true,
-      athlete: e.series.label};
+      athlete: e.series.label,
+      title: "Workout week"};
 
     data = [
       {

@@ -37,7 +37,9 @@
 	});
 
 	$('#meets-graph').on("click", function() {
+		drawMeetGraph();
 		$('#chart-title').html("Meet Times");
+
 		$('#meets-graph').removeClass("item");
 		$('#meets-graph').addClass("active item");
 
@@ -46,6 +48,7 @@
 	});
 
 	$('#workouts-graph').on("click", function() {
+		drawWorkoutGraph();
 		$('#chart-title').html("% of Workout Windows Hit");
 		$('#workouts-graph').removeClass("item");
 		$('#workouts-graph').addClass("active item");
