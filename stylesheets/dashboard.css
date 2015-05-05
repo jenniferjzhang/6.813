@@ -30,8 +30,6 @@ h2 {
 	height: 10%;
 	width: 100%;
 	display: block;
-	background-image: url('../img/old_moon.png');
-	background-repeat: repeat;
 }
 
 .dashboard-groups {
@@ -39,12 +37,10 @@ h2 {
 	display: inline-block;
 	height: 90%;
 	width: 20%;
-	top: 10%;
+	top: 12.5%;
 	margin-top: 25px;
 	padding-left: 10px;
 	border-right: 1px solid #E8E8E8;
-	background-image: url('../img/old_moon.png');
-	background-repeat: repeat;
 }
 
 .dashboard-content {
@@ -59,32 +55,50 @@ h2 {
 
 #navigation-home {
 	font-family: "Raleway";
-	font-size: 26pt;
+	font-size: 24pt;
 	height: 90%;
 	width: 20%;
-	background-image: url('../img/old_moon.png');
-	background-repeat: repeat;
+	background-color: #CC0300;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-	color: #CC0300;
+	color: white;
 }
 
 #navigation-link {
 	font-family: "Raleway";
-	font-size: 18pt;
+	font-size: 24pt;
 	height: 90%;
 	width: 40%;
-	background-color: white;
+	background-color: #CC0300;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
+	color: white;
+
 } 
+
+.graph-container {
+	width: 60%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.cards-container {
+	width: 35%;
+	display: inline-block;
+	vertical-align: top;
+
+}
+
+.column {
+	text-align: center;
+}
 
 
 .ui.vertical.menu {
 	width: 97%;
-	font-family: "Raleway";
+	font-family: "Open Sans";
 }
 
 .ui.vertical.menu .item {
@@ -93,9 +107,8 @@ h2 {
 
 .ui.vertical.menu .active.item {
 	box-shadow: none;
-	border: 1px solid #CC0300;
+	color: #CC0300;
 	background-color: white;
-	border-radius: 2px;
 }
 
 .ui.vertical.menu .active.item:hover {
@@ -104,15 +117,14 @@ h2 {
 
 .ui.menu .active.item {
 	box-shadow: none;
-	border: 1px solid #CC0300;
-	background-color: white;
-	border-radius: 2px;
+/*	border: 1px solid #CC0300;
+*/	background-color: white;
 }
 
 .ui.menu .active.item:hover {
 	box-shadow: none;
-	border: 1px solid #CC0300;
-	background-color: white;
+/*	border: 1px solid #CC0300;
+*/	background-color: white;
 	border-radius: 2px;
 }
 
@@ -145,6 +157,10 @@ h2 {
 }
 
 #chart-title {
+	text-align: center;
+}
+
+#card-title {
 	text-align: center;
 }
 
