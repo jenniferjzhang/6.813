@@ -27,8 +27,8 @@
 	<div class = "dashboard-wrapper">
 		<div class = "dashboard-navigation">
 			<div class = "ui menu">
-				<a class = "item" id = "navigation-home" href = "#">BOLT</a>
-				<a class = "active item" id = "navigation-link" href = "#">Athlete Performance</a>
+				<a class = "item" id = "navigation-home" href = "index.html">BOLT</a>
+				<a class = "active item" id = "navigation-link" href = "dashboard.html">Athlete Performance</a>
 				<a class = "item" id = "navigation-link" href = "meets.html">Meet Planner</a>
 			</div>
 		</div>
@@ -63,12 +63,17 @@
 					<a class = "item" id = "meets-graph" href = "#">Meets</a>
 					<a class = "active item" id = "workouts-graph" href = "#">Workouts</a>
 				</div>
-				<h2 id = "chart-title">% of Workout Windows Hit</h2>
-					<div id="chart">
-					  <svg></svg>
-					</div>
-				<span id="column">
-				</span>
+				<div class = "graph-container">
+					<h2 id = "chart-title">% of Workout Windows Hit</h2>
+						<div id="chart">
+						  <svg></svg>
+						</div>
+				</div>
+				<div class = "cards-container">
+					<h2 id = "card-title">Summary</h2>
+					<span id="column">
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -86,11 +91,11 @@
 	    </div>
 	    <div class="ui divider"></div>
         <div class="meta">
-          <a class="group">Status</a>
+          <div class="group">Status</div>
         </div>
         <div>{{status}}</div>
         <div class="meta" style="margin-top: 15px;">
-          <a class="group">Performance</a>
+          <div class="group">Performance</div>
         </div>
         {{#if data}}
 	        <table class="ui celled table">
