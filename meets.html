@@ -28,175 +28,175 @@
 				<a class="active item" id ="navigation-link" href ="#">Meet Planner</a>
 			</div>
 		</div>
-		<div class="ui breadcrumb">
-			<a class="section active" id="meet-title">Meets</a>
-			<i class="right chevron icon divider" id="divider1"></i>
-			<a class="section" id="chosen-meet">Registration</a>
-			<i class="right chevron icon divider" id="divider2"></i>
-			<a class="section" id="event">Personal Information</a>
-		</div>
-		<div class="dashboard-meets">
-			<script id="meets-template" type="text/x-handlebars-template">
-				<table class="ui table" id="meets">
-					<thead>
-						<tr>
-							<th class="ten wide">Meet</th>
-							<th class="five wide">Date</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{#each this}}
+		<div class="content-wrapper">
+			<div class="ui breadcrumb">
+				<a class="section active" id="meet-title">Meets</a>
+				<i class="right chevron icon divider" id="divider1"></i>
+				<a class="section" id="chosen-meet">Registration</a>
+				<i class="right chevron icon divider" id="divider2"></i>
+				<a class="section" id="event">Personal Information</a>
+			</div>
+			<div class="dashboard-meets">
+				<script id="meets-template" type="text/x-handlebars-template">
+					<table class="ui table" id="meets">
+						<thead>
 							<tr>
-								<td><a href="#">{{name}}</a></td>
-								<td>{{date}}</td>
+								<th class="ten wide">Meet</th>
+								<th class="five wide">Date</th>
 							</tr>
-						{{/each}}
-						
-					</tbody>
-				</table>
-			</script>
-		</div>
+						</thead>
+						<tbody>
+							{{#each this}}
+								<tr>
+									<td><a href="#">{{name}}</a></td>
+									<td>{{date}}</td>
+								</tr>
+							{{/each}}
+							
+						</tbody>
+					</table>
+				</script>
+			</div>
 
-		<div class="dashboard-schedule"> 
-			<script id="schedule-template" type="text/x-handlebars-template">
-				<table class="ui table" id="schedule">
-					<thead>
-						<tr>
-							<th class="ten wide">Event</th>
-							<th class="five wide">Time</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{#each this}}
+			<div class="dashboard-schedule hidden"> 
+				<script id="schedule-template" type="text/x-handlebars-template">
+					<table class="ui table" id="schedule">
+						<thead>
 							<tr>
-								<td class="event">
-									{{#if entries}}
-										<a href="#">{{event}}</a>
-									{{else}}
-										{{event}}
-									{{/if}}
-								</td>
-								<td>{{time}}</td>
+								<th class="ten wide">Event</th>
+								<th class="five wide">Time</th>
 							</tr>
-						{{/each}}
-						
-					</tbody>
-				</table>
-			</script>
-		</div>
-		
-		<div class="dashboard-content-top"> 
-			<table class="ui table" id="content-top"> 
-				<tbody> 
-					<thead> 
-						<tr> 
-							<th class="four wide">Athlete Name</th> 
-							<th class="four wide">Season Best</th> 
-							<th class="three wide">Personal Record</th> 
-							<th class="two wide">Predicted Points</th> 
-						</tr> 
-					</thead> 
-					<tr> 
-						<td>
-							<div class="ui icon green button">
-  								<i class="plus icon"></i>
-							</div>
-							<a href="#">Zachary Johnson</a>
-						</td> 
-						<td>1:51:000</td> 
-						<td>1:51:000</td> 
-						<td>10</td> 
-					</tr> 
-					<tr> 
-						<td><div class="ui icon color green button">
-  								<i class="plus icon"></i>
-							</div>
-							<a href="#">Quackary Duckson</a></td> 
-						<td>1:54:000</td> <td>1:54:000</td> 
-						<td>8</td> 
-					</tr> 
-					<tr> 
-						<td><div class="ui icon color green button">
-  								<i class="plus icon"></i>
-							</div>
-							<a href="#">Jachary Zohnson</a></td> 
-						<td>2:01:156</td> 
-						<td>1:55:846</td> 
-						<td>6</td> 
-					</tr> 
-					<tr> 
-						<td><div class="ui icon color green button">
-  								<i class="plus icon"></i>
-							</div>
-							<a href="#">Machary Lohnson</a></td> 
-						<td>2:03:654</td> 
-						<td>1:57:315</td> 
-						<td>5</td> 
-					</tr> 
-					<tr> 
-						<td><div class="ui icon color green button">
-  								<i class="plus icon"></i>
-							</div>
-							<a href="#">Lachary Mohnson</a></td> 
-						<td>2:04:507</td> 
-						<td>1:57:985</td> 
-						<td>4</td> 
-					</tr> 
-				</tbody> 
-			</table> 
-		</div>
-
-		<div class="dashboard-content-bottom">
-			<div class="predicted-results-table">
-				<table class="ui table"> 
+						</thead>
+						<tbody>
+							{{#each this}}
+								<tr>
+									<td class="event">
+										{{#if entries}}
+											<a href="#">{{event}}</a>
+										{{else}}
+											{{event}}
+										{{/if}}
+									</td>
+									<td>{{time}}</td>
+								</tr>
+							{{/each}}
+							
+						</tbody>
+					</table>
+				</script>
+			</div>
+			
+			<div class="dashboard-content-top hidden"> 
+				<table class="ui table" id="content-top"> 
 					<tbody> 
 						<thead> 
 							<tr> 
 								<th class="four wide">Athlete Name</th> 
-								<th class="four wide">Time</th> 
-								<th class="three wide">Points</th>
-								<th class="three wide">School</th>
+								<th class="four wide">Season Best</th> 
+								<th class="three wide">Personal Record</th> 
+								<th class="two wide">Predicted Points</th> 
 							</tr> 
 						</thead> 
 						<tr> 
-							<td><a href="#">Zachary Johnson</a></td> 
+							<td>
+								<div class="ui icon green button">
+	  								<i class="plus icon"></i>
+								</div>
+								<a href="#">Zachary Johnson</a>
+							</td> 
+							<td>1:51:000</td> 
 							<td>1:51:000</td> 
 							<td>10</td> 
-							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href="#">Quackary Duckson</a></td> 
-							<td>1:54:000</td> 
+							<td><div class="ui icon color green button">
+	  								<i class="plus icon"></i>
+								</div>
+								<a href="#">Quackary Duckson</a></td> 
+							<td>1:54:000</td> <td>1:54:000</td> 
 							<td>8</td> 
-							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href="#">Jachary Zohnson</a></td> 
+							<td><div class="ui icon color green button">
+	  								<i class="plus icon"></i>
+								</div>
+								<a href="#">Jachary Zohnson</a></td> 
 							<td>2:01:156</td> 
+							<td>1:55:846</td> 
 							<td>6</td> 
-							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href="#">Machary Lohnson</a></td> 
+							<td><div class="ui icon color green button">
+	  								<i class="plus icon"></i>
+								</div>
+								<a href="#">Machary Lohnson</a></td> 
 							<td>2:03:654</td> 
+							<td>1:57:315</td> 
 							<td>5</td> 
-							<td>MIT</td>
 						</tr> 
 						<tr> 
-							<td><a href="#">Lachary Mohnson</a></td> 
+							<td><div class="ui icon color green button">
+	  								<i class="plus icon"></i>
+								</div>
+								<a href="#">Lachary Mohnson</a></td> 
 							<td>2:04:507</td> 
+							<td>1:57:985</td> 
 							<td>4</td> 
-							<td>MIT</td>
 						</tr> 
 					</tbody> 
 				</table> 
 			</div>
 
-			<div class="predicted-results-graph">
-			</div>			
-		</div>
-		
+			<div class="dashboard-content-bottom hidden">
+				<div class="predicted-results-table">
+					<table class="ui table"> 
+						<tbody> 
+							<thead> 
+								<tr> 
+									<th class="four wide">Athlete Name</th> 
+									<th class="four wide">Time</th> 
+									<th class="three wide">Points</th>
+									<th class="three wide">School</th>
+								</tr> 
+							</thead> 
+							<tr> 
+								<td><a href="#">Zachary Johnson</a></td> 
+								<td>1:51:000</td> 
+								<td>10</td> 
+								<td>MIT</td>
+							</tr> 
+							<tr> 
+								<td><a href="#">Quackary Duckson</a></td> 
+								<td>1:54:000</td> 
+								<td>8</td> 
+								<td>MIT</td>
+							</tr> 
+							<tr> 
+								<td><a href="#">Jachary Zohnson</a></td> 
+								<td>2:01:156</td> 
+								<td>6</td> 
+								<td>MIT</td>
+							</tr> 
+							<tr> 
+								<td><a href="#">Machary Lohnson</a></td> 
+								<td>2:03:654</td> 
+								<td>5</td> 
+								<td>MIT</td>
+							</tr> 
+							<tr> 
+								<td><a href="#">Lachary Mohnson</a></td> 
+								<td>2:04:507</td> 
+								<td>4</td> 
+								<td>MIT</td>
+							</tr> 
+						</tbody> 
+					</table> 
+				</div>
 
+				<div class="predicted-results-graph">
+				</div>			
+			</div>
+		</div>
 	</div>
 </body>
 
