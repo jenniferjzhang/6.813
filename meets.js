@@ -2,9 +2,13 @@ var contentTopHtml = '<div class = "dashboard-content-top"> <table class="ui tab
 var scheduleTableHtml = '<div class = "dashboard-schedule"> <table class="ui table" id="schedule"> <tbody> <thead> <tr> <th class="ten wide">Event</th> <th class="five wide">Time</th> </tr> </thead> <tr> <td><a href = "#">Pole Vault</a></td> <td>3:30 PM</td> </tr> <tr> <td><a href = "#">Long Jump</a></td> <td>3:45 PM</td> </tr> <tr> <td><a href = "#">High Jump</a></td> <td>4:00 PM</td> </tr> <tr> <td><a href = "#">Shot Put</a></td> <td>4:15 PM</td> </tr> <tr> <td><a href = "#">4x800m Relay</a></td> <td>4:30 PM</td> </tr> <tr> <td><a href = "#">100m</a></td> <td>5:00 PM</td> </tr> <tr> <td><a href = "#">1600m</a></td> <td>5:05 PM</td> </tr> <tr> <td><a href = "#">4x100m Relay</a></td> <td>5:20 PM</td> </tr> </tbody> </table> </div>'
 
 $(document).ready(function() {
-    var source = $("#meets-template").html();
-    var template = Handlebars.compile(source);
-    $(".dashboard-meets").html(template(meets));
+    var meetsSource = $("#meets-template").html();
+    var meetsTemplate = Handlebars.compile(meetsSource);
+    $(".dashboard-meets").html(meetsTemplate(meets));
+
+    var scheduleSource = $("#schedule-template").html();
+    var scheduleTemplate = Handlebars.compile(scheduleSource);
+    $(".dashboard-schedule").html(scheduleTemplate(schedule));
 
     $(".dashboard-content-top").addClass('hidden').hide();
     $(".dashboard-content-bottom").addClass('hidden').hide();

@@ -58,48 +58,31 @@
 		</div>
 
 		<div class="dashboard-schedule"> 
-			<table class="ui table" id="schedule"> 
-				<tbody> 
-					<thead> 
-						<tr> 
-							<th class="ten wide">Event</th> 
-							<th class="five wide">Time</th> 
-						</tr> 
-					</thead> 
-					<tr> 
-						<td><a href="#">Pole Vault</a></td> 
-						<td>3:30 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">Long Jump</a></td> 
-						<td>3:45 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">High Jump</a></td> 
-						<td>4:00 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">Shot Put</a></td> 
-						<td>4:15 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">4x800m Relay</a></td> 
-						<td>4:30 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">100m</a></td> 
-						<td>5:00 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">1600m</a></td> 
-						<td>5:05 PM</td> 
-					</tr> 
-					<tr> 
-						<td><a href="#">4x100m Relay</a></td> 
-						<td>5:20 PM</td> 
-					</tr> 
-				</tbody> 
-			</table> 
+			<script id="schedule-template" type="text/x-handlebars-template">
+				<table class="ui table" id="schedule">
+					<thead>
+						<tr>
+							<th class="ten wide">Event</th>
+							<th class="five wide">Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each this}}
+							<tr>
+								<td class="event">
+									{{#if entries}}
+										<a href="#">{{event}}</a>
+									{{else}}
+										{{event}}
+									{{/if}}
+								</td>
+								<td>{{time}}</td>
+							</tr>
+						{{/each}}
+						
+					</tbody>
+				</table>
+			</script>
 		</div>
 		
 		<div class="dashboard-content-top"> 

@@ -160,3 +160,9 @@ a {
   padding-left: 10px;
 
 }
+
+.event {
+  font-family: "Raleway";
+  font-size: 14pt;
+  color: #CC0300;
+}
