@@ -116,7 +116,8 @@ var schedule = [
 ]
 
 var athletes = [
-	{
+	{	
+		id: 0,
 		name: "Henry Tareque",
 		sex: "Men",
 		group: "800m",
@@ -126,6 +127,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 1,
 		name: "Bruno Faviero",
 		sex: "Men",
 		group: "Sprints",
@@ -135,6 +137,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 2,
 		name: "Carlos Henriquez",
 		sex: "Men",
 		group: "Sprints",
@@ -144,6 +147,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 3,
 		name: "Danny Newman",
 		sex: "Men",
 		group: "400m",
@@ -153,6 +157,7 @@ var athletes = [
 		},
 	},
 	{
+		id:4,
 		name: "David Rudisha",
 		sex: "Men",
 		group: "800m",
@@ -162,6 +167,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 5,
 		name: "Vernon Norwood",
 		sex: "Men",
 		group: "400m",
@@ -171,6 +177,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 6,
 		name: "Jennifer Zhang",
 		sex: "Women",
 		group: "Sprints",
@@ -180,6 +187,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 7,
 		name: "Alysia Montaño",
 		sex: "Women",
 		group: "800m",
@@ -189,6 +197,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 8,
 		name: "Florence Joyner",
 		sex: "Women",
 		group: "Sprints",
@@ -198,6 +207,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 9,
 		name: "Sanya Richards-Ross",
 		sex: "Women",
 		group: "400m",
@@ -207,6 +217,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 10,
 		name: "Alyson Felix",
 		sex: "Women",
 		group: "400m",
@@ -216,6 +227,7 @@ var athletes = [
 		},
 	},
 	{
+		id: 11,
 		name: "Maggie Vessey",
 		sex: "Women",
 		group: "800m",
