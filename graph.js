@@ -543,7 +543,9 @@ function drawWorkoutGraph() {
 
     var height = ( h - margin.top - margin.bottom - 20 < 0 ) ? 
               margin.top + margin.bottom + 2 : h;
-    return height * 0.5;
+
+    console.log("height", height)
+    return height * 0.75;
   }
 
 

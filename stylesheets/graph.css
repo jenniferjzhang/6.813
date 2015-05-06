@@ -1,10 +1,5 @@
 #chart {
-	float: left;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	overflow: none;
-}
-
-#column {
-	float: left;
 }
