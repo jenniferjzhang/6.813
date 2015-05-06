@@ -22,8 +22,10 @@ Handlebars.registerHelper('getSB', function(athlete) {
 var meetsHandler = function(event) {
   var meet = $(this).text();
   if (state.meet) {
-    $('.dashboard-schedule')
-      .transition('slide right').transition('slide right');
+    if (state.selectedMeet != meet){
+      $('.dashboard-schedule')
+      .transition('slide left').transition('slide right');
+    }
   } else {
     $('.dashboard-schedule')
       .transition('slide right')
@@ -47,10 +49,12 @@ var meetsHandler = function(event) {
 var scheduleHandler = function(event) {
   var event = $(this).text();
   if (state.event) {
-    $('.dashboard-content-top')
-      .transition('slide right').transition('slide right');
-    $('.dashboard-content-bottom')
-      .transition('slide right').transition('slide right');
+    if (state.selectedEvent != event) {
+      $('.dashboard-content-top')
+        .transition('slide left').transition('slide right');
+      $('.dashboard-content-bottom')
+        .transition('slide left').transition('slide right');
+    };
   } else {
     $('.dashboard-content-top')
       .transition('slide right')
@@ -116,12 +120,23 @@ var submitButtonHandler = function(event) {
   if ($(this).hasClass('red')) {
     $(this).removeClass("red").addClass("green")
   .find(".minus").addClass("plus").removeClass("minus");
+    enterAthlete();
   } else {
     $(this).removeClass("green").addClass("red")
     .find(".plus").addClass("minus").removeClass("plus");
+    removeAthlete();
   }
 };
 
+// given id, add athlete to predicted entries
+var enterAthlete = function(id) {
+
+};
+
+// given id, remove athlete from predicted entries
+var removeAthlete = function(id) {
+
+};
 //draw graph
 var entriesGraph = function () {
   var margin = {top: 20, right: 0, bottom: 30, left: 30},
@@ -224,6 +239,7 @@ $(document).ready(function() {
     $("#schedule a").click(scheduleHandler);
     $("#breadcrumbs-meets").click(hideEverythingHandler);
     $("#breadcrumbs-current-meet").click(meetsHandler);
+    $("#breadcrumbs-current-event").click(scheduleHandler);
     $(".button").click(submitButtonHandler);
     
     
