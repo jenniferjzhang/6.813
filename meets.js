@@ -19,14 +19,12 @@ var state = {
   selectedEvent: "800m", //default to an arbitrary event so site doesn't break onLoad
   enteredAthletes: []
 };
-
 Handlebars.registerHelper('getPR', function(athlete) {
   var pr = athlete.events[state.selectedEvent].PR;
   return new Handlebars.SafeString(pr);
 }); 
 
 Handlebars.registerHelper('getSB', function(athlete) {
-  console.log(athlete);
   var sb = athlete.events[state.selectedEvent].SB;
   return new Handlebars.SafeString(sb);
 }); 
@@ -34,7 +32,6 @@ Handlebars.registerHelper('getSB', function(athlete) {
 // handler for clicking on a meet in the meets list
 var meetsHandler = function(event) {
   var meet = $(this).text();
-  console.log(meet);
   if (state.meet) {
     if (state.selectedMeet != meet){
       $('.dashboard-schedule')
@@ -77,7 +74,6 @@ var scheduleHandler = function(event) {
       .transition('slide right')
       .removeClass('hidden');
   }
-  entriesGraph();
   $("#divider2").removeClass("hidden");
   $("#breadcrumbs-current-meet").removeClass("active");
   $("#breadcrumbs-current-event")
@@ -101,7 +97,6 @@ var scheduleHandler = function(event) {
     $(".predicted-results-graph").hide();
     $(".predicted-results-table").hide();
   } else {
-    console.log("compiling");
     var entriesSource = templates["entries"];
     var entriesTemplate = Handlebars.compile(entriesSource);
 
@@ -124,7 +119,6 @@ var scheduleHandler = function(event) {
         athIds.push(ptsCols[col].id);
         var ptsCol = ptsCols[col].children[3];
        // ptsCol.innerHTML = "FIGS";
-        console.log(ptsCol);
       }
     }
 
@@ -135,12 +129,15 @@ var scheduleHandler = function(event) {
     }
     //get points
     var eventpoints = getEventResults(aths, state.selectedEvent);
-    console.log(eventpoints);
 
     // show graphs
     $(".predicted-results-graph").show();
     $(".predicted-results-table").show();
     $(".button").click(submitButtonHandler);
+
+     var meetResults = results[state.selectedEvent];
+     meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
+    entriesGraph(meetResults);
 
   }
 };
@@ -199,20 +196,22 @@ var submitButtonHandler = function(event) {
   }
 };
 
+
 // given id, add athlete to predicted entries
 var enterAthlete = function(id) {
   // Get athleteId from button, then get athlete from data.js
   var athleteId = id[0].firstElementChild.id;
   var athlete = athletes[athleteId];
+
+
   var meetResults = results[state.selectedEvent];
 
   //Add athelete to participants, then compute results, redraw graph
   meetResults.participants.push(athlete);
  // console.log(meetResults.participants);
   meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
-
-  //Now that we have results, add them to table
-
+  // 
+  entriesGraph(meetResults);
 };
 
 // given id, remove athlete from predicted entries
@@ -223,11 +222,33 @@ var removeAthlete = function(id) {
 
   //remove athlete from participants, then recompute results, redraw graph
   meetResults.participants.splice(meetResults.participants.indexOf(athlete),1);
-  console.log(meetResults.participants);
   meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
+  entriesGraph(meetResults);
 };
+
 //draw graph
-var entriesGraph = function () {
+var entriesGraph = function (meetResults) {
+  var source   = $("#row-template").html();
+  var template = Handlebars.compile(source);
+  athletes_list = []
+  _.forEach(meetResults.rankings, function(arr) {
+    athlete = arr[0]
+    points = arr[1]
+    ath = {}
+    ath.name = athlete.name,
+    ath.time = athlete.events[state.selectedEvent].PR,
+    ath.points = points
+    ath.school = athlete.school ? athlete.school : "MIT"
+    athletes_list.push(ath);
+  });
+
+  context = {
+    athletes: athletes_list
+  }
+  var content    = template(context);
+  $('.predicted-results-table  tbody').empty();
+  $('.predicted-results-table  tbody').append(content);
+
   var margin = {top: 20, right: 0, bottom: 30, left: 30},
       width = $('.predicted-results-graph').width() - margin.left - margin.right,
       height = 300 - margin.top - margin.bottom;
@@ -254,7 +275,7 @@ var entriesGraph = function () {
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  x.domain(["MIT", "BU", "Harvard", "Tufts"]);
+  x.domain(["MIT", "BU", "Harvard"]);
 
   y.domain([0, 18]);
 
@@ -273,15 +294,24 @@ var entriesGraph = function () {
       .style("text-anchor", "end")
       .text("Points");
 
+    schoolpoints = {
+      MIT: 0,
+      BU: 0,
+      Harvard: 0
+    }
+    _.forEach(meetResults.rankings, function(arr) {
+      ath = arr[0];
+      school = ath.school ? ath.school : "MIT"
+      schoolpoints[school] += arr[1]
+    })
+
     var data = [
-      {letter: 'MIT', frequency: 18, stroke: 'green', color:'rgba(0, 128, 0, 0.2)'},
-          {letter: 'MIT', frequency: 10, color: 'gray'},
-          {letter: 'BU', frequency: 12, stroke: 'red', color:'rgba(128, 0, 0, 0.2)'},
-          {letter: 'BU', frequency: 7, color: 'gray'}, 
-          {letter: 'Harvard', frequency: 8, stroke: 'red', color:'rgba(128, 0, 0, 0.2)'},
-          {letter: 'Harvard', frequency: 6, color: 'gray'},
-          {letter: 'Tufts', frequency: 7, stroke: 'red', color:'rgba(128, 0, 0, 0.2)'},
-          {letter: 'Tufts', frequency: 4, color: 'gray'}]
+          //{letter: 'MIT', frequency: 18, stroke: 'green', color:'rgba(0, 128, 0, 0.2)'},
+          {letter: 'MIT', frequency: schoolpoints['MIT'], color: 'gray'},
+          //{letter: 'BU', frequency: 12, stroke: 'red', color:'rgba(128, 0, 0, 0.2)'},
+          {letter: 'BU', frequency: schoolpoints['BU'], color: 'gray'}, 
+          //{letter: 'Harvard', frequency: 8, stroke: 'red', color:'rgba(128, 0, 0, 0.2)'},
+          {letter: 'Harvard', frequency: schoolpoints['Harvard'], color: 'gray'}]
     svg.selectAll(".bar")
         .data(data)
       .enter().append("rect")

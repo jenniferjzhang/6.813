@@ -15,6 +15,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<script type="text/javascript" src="lodash.js"></script>
 	<script type="text/javascript" src="templates.js"></script>
 	<script type="text/javascript" src="data.js"></script>
 
@@ -22,6 +23,17 @@
 
 	
 </head>
+
+<script id="row-template" type="text/x-handlebars-template">
+	{{#each athletes}}
+		<tr>
+			<td>{{name}}</td>
+			<td>{{time}}</td>
+			<td>{{points}}</td>
+			<td>{{school}}</td>
+		</tr>  
+	{{/each}}
+</script>
 
 <body>
 	<div class="dashboard-wrapper">

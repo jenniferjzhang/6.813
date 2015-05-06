@@ -340,7 +340,8 @@ var athletes = [
 		sex: "Women",
 		group: "800m",
 		events: {
-			"800m": {PR: "1:57.84", SB: "2:00.04"}
+			"800m": {PR: "1:57.84", SB: "2:00.04"},
+			"400m": {PR: "1:57.84", SB: "2:00.04"}
 		},
 		workoutPercentages: workoutPercentages1,
 		statuses: [
@@ -684,7 +685,6 @@ var results = {
 function getEventResults(participants, event) {
 	//first sort participants based on personal record/season best
 	var sorted = [];
-	console.log(participants);
 	//Get participant from Array
 	for (index in participants) {
 		var participant = participants[index];
@@ -697,15 +697,12 @@ function getEventResults(participants, event) {
 	var results = [];
 	for (i in sorted) {
 		var runner = sorted[i];
-		console.log(runner[0]);
 		results.push([runner[0], points[sorted.indexOf(runner)]]);
 	}
-	console.log(results);
 	return results
 };
 
-function getBestTime(participant, event) {
-	console.log(participant);
+function getBestTime(participant, event) {	
 	var PR = participant.events[event].PR;
 	var SB = participant.events[event].SB;
 
