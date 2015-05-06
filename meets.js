@@ -231,6 +231,23 @@ var entriesGraph = function (meetResults) {
   var source   = $("#row-template").html();
   var template = Handlebars.compile(source);
   athletes_list = []
+
+  maxpoints = 0;
+
+  schoolpoints = {
+    MIT: 0,
+    BU: 0,
+    Harvard: 0
+  }
+  _.forEach(meetResults.rankings, function(arr) {
+    ath = arr[0];
+    school = ath.school ? ath.school : "MIT"
+    schoolpoints[school] += arr[1]
+    if (schoolpoints[school] > maxpoints) {
+      maxpoints = schoolpoints[school];
+    }
+  })
+
   _.forEach(meetResults.rankings, function(arr) {
     athlete = arr[0]
     points = arr[1]
@@ -277,7 +294,7 @@ var entriesGraph = function (meetResults) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   x.domain(["MIT", "BU", "Harvard"]);
 
-  y.domain([0, 18]);
+  y.domain([0, maxpoints]);
 
   svg.append("g")
       .attr("class", "x axis")
@@ -294,16 +311,6 @@ var entriesGraph = function (meetResults) {
       .style("text-anchor", "end")
       .text("Points");
 
-    schoolpoints = {
-      MIT: 0,
-      BU: 0,
-      Harvard: 0
-    }
-    _.forEach(meetResults.rankings, function(arr) {
-      ath = arr[0];
-      school = ath.school ? ath.school : "MIT"
-      schoolpoints[school] += arr[1]
-    })
 
     var data = [
           //{letter: 'MIT', frequency: 18, stroke: 'green', color:'rgba(0, 128, 0, 0.2)'},
