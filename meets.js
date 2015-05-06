@@ -114,6 +114,8 @@ var scheduleHandler = function(event) {
     // show graphs
     $(".predicted-results-graph").show();
     $(".predicted-results-table").show();
+    $(".button").click(submitButtonHandler);
+    
   }
 };
 
