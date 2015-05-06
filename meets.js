@@ -1,3 +1,15 @@
+var currentEvent = "800m";
+
+Handlebars.registerHelper('getPR', function(athlete) {
+  var pr = athlete.events[currentEvent].PR;
+  return new Handlebars.SafeString(pr);
+}); 
+
+Handlebars.registerHelper('getSB', function(athlete) {
+  var sb = athlete.events[currentEvent].SB;
+  return new Handlebars.SafeString(sb);
+}); 
+
 $(document).ready(function() {
 
     // populate meet template with meets
@@ -9,6 +21,17 @@ $(document).ready(function() {
     var scheduleSource = $("#schedule-template").html();
     var scheduleTemplate = Handlebars.compile(scheduleSource);
     $(".dashboard-schedule").html(scheduleTemplate(schedule));
+
+    // populate entries template with athletes
+    var entriesSource = $("#entries-template").html();
+    var entriesTemplate = Handlebars.compile(entriesSource);
+    $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
+      function (athlete) {
+        return currentEvent in athlete.events
+      } 
+    )));
+
+    
 
     $(".dashboard-content-top").addClass('hidden').hide();
     $(".dashboard-content-bottom").addClass('hidden').hide();

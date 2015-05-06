@@ -7,7 +7,7 @@ h1 {
 h2 {
 	font-family: "Raleway";
 	font-size: 18pt;
-	color: #CC0300;
+	color: white;
 
 }
 
@@ -37,10 +37,14 @@ h2 {
 	display: inline-block;
 	height: 90%;
 	width: 20%;
-	top: 12.5%;
+	top: 9%;
 	margin-top: 25px;
+	border-top: 5px solid white;
 	padding-left: 10px;
-	border-right: 1px solid #E8E8E8;
+	padding-top: 20px;
+	background-color: #CC0300;
+/*	background-image: url('../img/old_moon.png');
+	background-repeat: repeat;*/
 }
 
 .dashboard-content {
@@ -63,6 +67,7 @@ h2 {
 	vertical-align: middle;
 	text-align: center;
 	color: white;
+	border-bottom: 5px solid transparent;
 }
 
 #navigation-link {
@@ -70,11 +75,40 @@ h2 {
 	font-size: 24pt;
 	height: 90%;
 	width: 40%;
-	background-color: #CC0300;
+	background-color: white;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-	color: white;
+	color: #949494;
+	border-bottom: 5px solid white;
+
+}
+
+#navigation-link-active {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: #5C5C5C;
+	border-bottom: 5px solid #CCCCCC;
+
+}
+
+a#navigation-link:hover {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: #CCCCCC;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: #949494;
+	border-bottom: 5px solid transparent;
 
 } 
 
@@ -97,8 +131,11 @@ h2 {
 
 
 .ui.vertical.menu {
-	width: 97%;
-	font-family: "Open Sans";
+	width: 98%;
+	font-family: "Raleway";
+	border: none;
+	border-radius: none;
+
 }
 
 .ui.vertical.menu .item {
@@ -117,22 +154,58 @@ h2 {
 
 .ui.menu .active.item {
 	box-shadow: none;
-/*	border: 1px solid #CC0300;
-*/	background-color: white;
 }
 
 .ui.menu .active.item:hover {
 	box-shadow: none;
-/*	border: 1px solid #CC0300;
-*/	background-color: white;
-	border-radius: 2px;
+
 }
+
+.group-title{
+	font-family: "Lato";
+	font-size: 13pt;
+	color: white;
+	padding-left: 5px;
+}
+
+a.group-title:hover {
+	color: #CCCCCC;
+
+}
+
+.athlete-container {	
+	margin-left: 40px;
+	vertical-align: middle;
+}
+
+.athlete {
+	font-family: "Lato";
+	font-size: 12pt;
+	color: white;
+}
+
+
+a.athlete:hover {
+	color: #CCCCCC;
+
+}
+
+.fa.fa-caret-right {
+	color: white;
+	margin-left: 20px;
+}
+
+.fa.fa-caret-down {
+	color: white;
+	margin-left: 20px;
+}
+
+
 
 
 .ui.menu > a.item:hover{
 	box-shadow: none;
-	background-color: white;
-	border-radius: 2px;
+
 }
 
 
@@ -158,10 +231,14 @@ h2 {
 
 #chart-title {
 	text-align: center;
+	color: #CC0300;
+
 }
 
 #card-title {
 	text-align: center;
+	color: #CC0300;
+
 }
 
 /*.athlete-pic {
@@ -178,7 +255,7 @@ h2 {
 	border-radius: 100%;
 	overflow: hidden;
 	display: inline-block;
-	float: right;
+	float: left;
 	border: 1px solid #CC0300;
 
 }

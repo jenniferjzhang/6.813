@@ -17,7 +17,9 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/dashboard.css" />
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 	<script type="text/javascript" src="handlebars-v3.0.0.js"></script>
 	<script type="text/javascript" src="lodash.js"></script>
 
@@ -28,12 +30,43 @@
 		<div class = "dashboard-navigation">
 			<div class = "ui menu">
 				<a class = "item" id = "navigation-home" href = "index.html">BOLT</a>
-				<a class = "active item" id = "navigation-link" href = "dashboard.html">Athlete Performance</a>
+				<a class = "active item" id = "navigation-link-active" href = "dashboard.html">Athlete Performance</a>
 				<a class = "item" id = "navigation-link" href = "meets.html">Meet Planner</a>
 			</div>
 		</div>
 		<div class = "dashboard-groups">
 			<h2>Groups</h2>
+			<i class="fa fa-caret-right"></i>
+			<a class = "group-title" id = "male-sprinters" href = "#">Male Sprinters</a>
+
+				<div class = "menu hidden">
+					<div class = "athlete-container">
+						<a class = "athlete" id = "bruno" href = "#">Bruno Faviero</a>
+					</div>
+					<div class = "athlete-container">
+						<a class = "athlete" id = "henry" href = "#">Henry Tareque</a>
+					</div>	
+					<div class = "athlete-container">
+						<a class = "athlete" id = "carlos" href = "#">Carlos Henriquez</a>
+					</div>	
+
+				</div>
+			<br>
+			<i class="fa fa-caret-right"></i>
+			<a class = "group-title" id = "female-sprinters" href = "#">Female Sprinters</a>
+
+				<div class = "menu hidden">
+					<div class = "athlete-container">
+						<a class = "athlete" id = "jennifer" href = "#">Jennifer Zhang</a>
+					</div>
+					<div class = "athlete-container">
+						<a class = "athlete" id = "erin" href = "#">Erin Reynolds</a>
+					</div>
+
+				</div>
+
+
+<!-- 
 			<div class = "ui vertical menu">
 				<div class = "item">
 					<a class = "group-title" id = "male-sprinters" href = "#">Male Sprinters</a>
@@ -55,7 +88,7 @@
 								<div class = "img-container"><img class = "athlete-pic" src = "img/erin.jpg"></div></a>
 						</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div class = "dashboard-content">
 			<div class = "chart-container">
