@@ -115,9 +115,13 @@ var schedule = [
 	},
 ]
 
-function randomWorkoutPercentages() {
-	return [Math.floor((Math.random() * 51) + 50), Math.floor((Math.random() * 51) + 50), Math.floor((Math.random() * 51) + 50), Math.floor((Math.random() * 51) + 50), Math.floor((Math.random() * 51) + 50), Math.floor((Math.random() * 51) + 50)];
-}
+
+var workoutPercentages1 = [100, 75, 75, 100, 66, 75];
+var workoutPercentages2 = [65, 75, 80, 90, 65, 95];
+var workoutPercentages3 = [55, 80, 66, 70, 85, 65];
+var workoutPercentages4 = [72, 80, 82, 84, 86, 90];;
+var workoutPercentages5 = [75, 45, 47, 80, 74, 92];;
+
 
 
 var athletes = [
@@ -149,7 +153,7 @@ var athletes = [
 			"100m": {PR: "10.87", SB: "10.95"},
 			"200m": {PR: "22.35", SB: "22.35"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages1,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -168,7 +172,7 @@ var athletes = [
 			"100m": {PR: "11.02", SB: "11.10"},
 			"200m": {PR: "22.42", SB: "22.65"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages5,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -187,7 +191,7 @@ var athletes = [
 			"200m": {PR: "22.88", SB: "22.88"},
 			"400m": {PR: "49.50", SB: "49.50"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages3,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -206,7 +210,7 @@ var athletes = [
 			"400m": {PR: "45.15", SB: "-"},
 			"800m": {PR: "1:40.91", SB: "-"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages2,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -225,7 +229,7 @@ var athletes = [
 			"200m": {PR: "20.82", SB: "20.84"},
 			"400m": {PR: "44.44", SB: "44.44"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages5,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -244,7 +248,7 @@ var athletes = [
 			"100m": {PR: "13.54", SB: "13.34"},
 			"200m": {PR: "27.20", SB: "27.20"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages3,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -263,7 +267,7 @@ var athletes = [
 			"400m": {PR: "52.09", SB: "-"},
 			"800m": {PR: "1:57.34", SB: "-"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages1,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -282,7 +286,7 @@ var athletes = [
 			"100m": {PR: "10.49", SB: "-"},
 			"200m": {PR: "21.34", SB: "-"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages4,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -301,7 +305,7 @@ var athletes = [
 			"200m": {PR: "22.09", SB: "-"},
 			"400m": {PR: "48.70", SB: "-"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages2,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -320,7 +324,7 @@ var athletes = [
 			"200m": {PR: "21.69", SB: "-"},
 			"400m": {PR: "49.59", SB: "-"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages5,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
@@ -338,7 +342,7 @@ var athletes = [
 		events: {
 			"800m": {PR: "1:57.84", SB: "2:00.04"}
 		},
-		workoutPercentages: randomWorkoutPercentages(),
+		workoutPercentages: workoutPercentages1,
 		statuses: [
 	      "feeling pretty good",
 	      "didn't get much sleep last night",
