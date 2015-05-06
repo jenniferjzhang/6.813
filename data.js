@@ -135,7 +135,7 @@ var athletes = [
 		},
 	},
 	{
-		name: "Carlos Enriquez",
+		name: "Carlos Henriquez",
 		sex: "Men",
 		group: "Sprints",
 		events: {
