@@ -18,6 +18,7 @@ Handlebars.registerHelper('getSB', function(athlete) {
   return new Handlebars.SafeString(sb);
 }); 
 
+// handler for clicking on a meet in the meets list
 var meetsHandler = function(event) {
   var meet = $(this).text();
   if (state.meet) {
@@ -30,7 +31,7 @@ var meetsHandler = function(event) {
   }
 
   if (state.event) {
-    clearEntries();
+    hideEntries();
   }
 
   $("#divider1").removeClass("hidden");
@@ -42,6 +43,7 @@ var meetsHandler = function(event) {
   state.selectedMeet = meet;
 };
 
+// handler for clicking on an event in the schedule
 var scheduleHandler = function(event) {
   var event = $(this).text();
   if (state.event) {
@@ -68,7 +70,8 @@ var scheduleHandler = function(event) {
   state.selectedEvent = event;
 };
 
-var clearEntries = function () {
+// hide the entries and graph
+var hideEntries = function () {
   if (state.event) {
     $('.dashboard-content-top')
       .transition('slide right')
@@ -90,7 +93,8 @@ var clearEntries = function () {
   state.selectedEvent = "";
 };
 
-var clearSchedule = function () {
+// hide the schedule
+var hideSchedule = function () {
   $('.dashboard-schedule')
       .transition('slide right')
       .addClass('hidden');
@@ -102,9 +106,10 @@ var clearSchedule = function () {
   state.selectedMeet = "";
 };
 
-var clearEverythingHandler = function(event) {
-  clearEntries();
-  clearSchedule();
+// handler for when user clicks on "Meets" breadcrumb
+var hideEverythingHandler = function(event) {
+  hideEntries();
+  hideSchedule();
 };
 
 var submitButtonHandler = function(event) {
@@ -117,6 +122,7 @@ var submitButtonHandler = function(event) {
   }
 };
 
+//draw graph
 var entriesGraph = function () {
   var margin = {top: 20, right: 0, bottom: 30, left: 30},
       width = $('.predicted-results-graph').width() - margin.left - margin.right,
@@ -216,7 +222,7 @@ $(document).ready(function() {
 
     $("#meets a").click(meetsHandler);
     $("#schedule a").click(scheduleHandler);
-    $("#breadcrumbs-meets").click(clearEverythingHandler);
+    $("#breadcrumbs-meets").click(hideEverythingHandler);
     $("#breadcrumbs-current-meet").click(meetsHandler);
     $(".button").click(submitButtonHandler);
     
