@@ -535,7 +535,7 @@ function drawWorkoutGraph() {
   function width(margin) {
     var w = $('.dashboard-content').width() - 20;
     var width = ( (w - margin.left - margin.right - 20) < 0 ) ? margin.left + margin.right + 2 : w;
-    return width*0.5;
+    return width*0.475;
   }
 
   function height(margin) {

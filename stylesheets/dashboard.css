@@ -112,21 +112,31 @@ a#navigation-link:hover {
 
 } 
 
+.chart-container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0px 10px;
+}
+
+
 .graph-container {
-	width: 60%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
+	float: left;
 }
 
 .cards-container {
-	width: 35%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
+	text-align: center;
+	float: right;
 
 }
 
-.column {
-	text-align: center;
+.ui.card {
+	margin: 0 auto;
 }
 
 .ui.menu {
@@ -231,11 +241,6 @@ a.athlete:hover {
 	font-size: 18pt;
 	background-color: purple;
 	padding: 5px 5px;
-}
-
-.chart-container {
-	width: 90%;
-	margin: 0 auto;
 }
 
 #chart-title {
