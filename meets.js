@@ -5,6 +5,8 @@
 // entry table is not sorted by PR or SB or Predicted Points
 // predicted points graph needs better layout, padding/margin
 // submit entry button is unimplemented yet
+// uneven scrollbars across panes. also overflow shoud eventually be set to hidden
+// 
 
 // currentEvent is a static variable that will select all the athletes who run that
 var currentEvent = "800m"; // can also be "100m", or "400m"
