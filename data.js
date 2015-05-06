@@ -64,12 +64,12 @@ var schedule = [
 		entries:true
 	},
 	{
-		event:"100m Dash",
+		event:"100m",
 		time:"1:35pm",
 		entries:true
 	},
 	{
-		event:"1,500m Run",
+		event:"1,500m",
 		time:"1:50pm",
 		entries:true
 	},
@@ -79,17 +79,17 @@ var schedule = [
 		entries:false
 	},
 	{
-		event:"400m Dash",
+		event:"400m",
 		time:"2:20pm",
 		entries:true
 	},
 	{
-		event:"100m Dash Final",
+		event:"100m Final",
 		time:"2:35pm",
 		entries:false
 	},
 	{
-		event:"800m Run",
+		event:"800m",
 		time:"2:45pm",
 		entries:true
 	},
@@ -99,12 +99,12 @@ var schedule = [
 		entries:true
 	},
 	{
-		event:"200m Dash",
+		event:"200m",
 		time:"3:15pm",
 		entries:true
 	},
 	{
-		event:"5,000m Run",
+		event:"5,000m",
 		time:"3:30pm",
 		entries:true
 	},
