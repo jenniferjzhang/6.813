@@ -15,6 +15,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<script type="text/javascript" src="templates.js"></script>
 
 
 	
@@ -45,114 +46,22 @@
 			<div class = "dashboard-main-column">
 			</div>
 			<div class="dashboard-meets">
-				<script id="meets-template" type="text/x-handlebars-template">
-					<table class="ui table" id="meets">
-						<thead>
-							<tr>
-								<th class="ten wide">Meet</th>
-								<th class="five wide">Date</th>
-							</tr>
-						</thead>
-						<tbody>
-							{{#each this}}
-								<tr>
-									<td><a href="#">{{name}}</a></td>
-									<td>{{date}}</td>
-								</tr>
-							{{/each}}
-							
-						</tbody>
-					</table>
-				</script>
+				<!-- templates["meets"] goes here -->
 			</div>
 
 			<div class="dashboard-schedule hidden"> 
-				<script id="schedule-template" type="text/x-handlebars-template">
-					<table class="ui table" id="schedule">
-						<thead>
-							<tr>
-								<th class="ten wide">Event</th>
-								<th class="five wide">Time</th>
-							</tr>
-						</thead>
-						<tbody>
-							{{#each this}}
-								<tr>
-									<td class="event">
-										{{#if entries}}
-											<a href="#">{{event}}</a>
-										{{else}}
-											{{event}}
-										{{/if}}
-									</td>
-									<td>{{time}}</td>
-								</tr>
-							{{/each}}
-							
-						</tbody>
-					</table>
-				</script>
+				<!-- templates["schedule"] goes here -->
 			</div>
 			
 			<div class="dashboard-content-top hidden">
-				<script id="entries-template" type="text/x-handlebars-template">
-					<table class="ui table" id="entries">
-						<thead> 
-							<tr> 
-								<th class="four wide">Athlete</th> 
-								<th class="two wide">Season Best</th> 
-								<th class="two wide">Personal Record</th>
-								<th class="two wide">Predicted Points</th>
-								<th class="two wide">Submit Entry</th> 
-							</tr> 
-						</thead> 
-						<tbody>
-							{{#each this}}
-								<tr>
-									<td>{{name}}</td>
-									<td>{{getSB this}}</td>
-									<td>{{getPR this}}</td>
-									<td>5</td>
-									<td>
-										<div class="ui icon green button">
-			  								<i id={{id}} class="plus icon"></i>
-										</div>
-									</td>
-								</tr>
-							{{/each}}
-						</tbody>
-					</table>
-				</script>	
+				<!-- templates["entries"] goes here -->
 			</div>
 
 			<div class="dashboard-content-bottom hidden">
-				<div class="predicted-results-table">
-					<table class="ui table"> 
-						<tbody> 
-							<thead> 
-								<tr> 
-									<th class="four wide">Athlete</th> 
-									<th class="four wide">Time</th> 
-									<th class="three wide">Points</th>
-									<th class="three wide">School</th>
-								</tr> 
-							</thead> 
-							<tr> 
-								<td>Harrison Hunter</td> 
-								<td>1:51:00</td> 
-								<td>10</td> 
-								<td>MIT</td>
-							</tr>
-							<tr> 
-								<td>Sam Parker</td> 
-								<td>1:52:00</td> 
-								<td>8</td> 
-								<td>MIT</td>
-							</tr> 
-						</tbody> 
-					</table> 
-				</div>
-
+				<!-- templates["results"] goes here -->
+				<script>
+					document.write(templates["oldResults"]);
+				</script>
 				<div class="predicted-results-graph">
 				</div>			
 			</div>

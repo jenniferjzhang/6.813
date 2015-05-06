@@ -6,9 +6,10 @@
 // predicted points graph needs better layout, padding/margin
 // submit entry button is unimplemented yet
 // uneven scrollbars across panes. also overflow shoud eventually be set to hidden
-// 
+// all columns should have same height, individual scroll   
 
 // currentEvent is a static variable that will select all the athletes who run that
+// Repopulate athletes based on current event (update dynamically)
 var currentEvent = "800m"; // can also be "100m", or "400m"
 var state = {
   meet: false,
@@ -29,9 +30,12 @@ Handlebars.registerHelper('getSB', function(athlete) {
   return new Handlebars.SafeString(sb);
 }); 
 
+Handlebars.registerHelper("")
+
 // handler for clicking on a meet in the meets list
 var meetsHandler = function(event) {
   var meet = $(this).text();
+  console.log(meet);
   if (state.meet) {
     if (state.selectedMeet != meet){
       $('.dashboard-schedule')
@@ -83,6 +87,15 @@ var scheduleHandler = function(event) {
     .removeClass("hidden");
   state.event = true;
   state.selectedEvent = event;
+ /*   var entriesSource = $("#entries-template").html();
+    var entriesTemplate = Handlebars.compile(entriesSource);
+
+  $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
+      function (athlete) {
+       console.log(state.selectedEvent, athlete.events)
+        return state.selectedEvent in athlete.events
+      } 
+    )))*/
 };
 
 // hide the entries and graph
@@ -131,17 +144,22 @@ var submitButtonHandler = function(event) {
   if ($(this).hasClass('red')) {
     $(this).removeClass("red").addClass("green")
   .find(".minus").addClass("plus").removeClass("minus");
-    enterAthlete();
+    removeAthlete($(this));
   } else {
     $(this).removeClass("green").addClass("red")
     .find(".plus").addClass("minus").removeClass("plus");
-    removeAthlete();
+    enterAthlete($(this));
   }
 };
 
 // given id, add athlete to predicted entries
 var enterAthlete = function(id) {
-
+  // Get athleteId from button, then get athlete from data.js
+  var athleteId = id[0].firstElementChild.id;
+  var athlete = athletes[athleteId];
+  console.log(athlete);
+  // 
+  
 };
 
 // given id, remove athlete from predicted entries
@@ -227,23 +245,30 @@ var entriesGraph = function () {
 $(document).ready(function() {
 
     // populate meet template with meets
-    var meetsSource = $("#meets-template").html();
+    var meetsSource = templates["meets"];
     var meetsTemplate = Handlebars.compile(meetsSource);
     $(".dashboard-meets").html(meetsTemplate(meets));
 
     // populate schedule template with events
-    var scheduleSource = $("#schedule-template").html();
+    var scheduleSource = templates["schedule"];
     var scheduleTemplate = Handlebars.compile(scheduleSource);
     $(".dashboard-schedule").html(scheduleTemplate(schedule));
 
     // populate entries template with athletes
-    var entriesSource = $("#entries-template").html();
+    var entriesSource = templates["entries"];
     var entriesTemplate = Handlebars.compile(entriesSource);
     $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
       function (athlete) {
+       
         return currentEvent in athlete.events
       } 
     )));
+
+    //populate results template with current athletes + input
+    var resultsSource = templates["oldResults"];
+    //var resultsTemplate = Handlebars.compile(resultsSource);
+    //TODO: filter results
+    //$(".dashboard-content-bottom").html(resultsTemplate(results));
 
 
     $("#meets a").click(meetsHandler);
