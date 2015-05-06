@@ -180,12 +180,22 @@ var enterAthlete = function(id) {
   var athlete = athletes[athleteId];
   var meetResults = results[state.selectedEvent];
 
-  meetResults.rankings = getEventResults(meetResults);
+  //Add athelete to participants, then compute results, redraw graph
+  meetResults.participants.push(athlete);
+  console.log(meetResults.participants);
+  meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
 };
 
 // given id, remove athlete from predicted entries
 var removeAthlete = function(id) {
+  var athleteId = id[0].firstElementChild.id;
+  var athlete = athletes[athleteId];
+  var meetResults = results[state.selectedEvent];
 
+  //remove athlete from participants, then recompute results, redraw graph
+  meetResults.participants.splice(meetResults.participants.indexOf(athlete),1);
+  console.log(meetResults.participants);
+  meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
 };
 //draw graph
 var entriesGraph = function () {

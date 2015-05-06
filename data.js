@@ -378,7 +378,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"4x100m Relay": {
@@ -402,7 +401,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 
 	},
 	
@@ -427,7 +425,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"110m Hurdles Trials": {
@@ -451,7 +448,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"100m": {
@@ -475,7 +471,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"1,500m": {
@@ -499,7 +494,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"110m Hurdles Final": {
@@ -523,7 +517,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"400m": {
@@ -547,7 +540,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"100m Final": {
@@ -571,7 +563,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"800m": {
@@ -595,7 +586,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"400m Hurdles": {
@@ -619,7 +609,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"200m": {
@@ -643,7 +632,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"5,000m": {
@@ -667,7 +655,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 	
 	"4x400m Relay": {
@@ -691,7 +678,6 @@ var results = {
 				}
 			}
 		],
-		rankings: getEventResults,
 	},
 };
 
