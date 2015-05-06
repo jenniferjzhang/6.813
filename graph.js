@@ -15,8 +15,8 @@ function p(t1, t2, t) {
 
 workout_data = []
 
-for (var i = 0; i < athletes.length; i++) {
-  if (athletes[i].sex === "Men" && athletes[i].group === "Sprints") {
+for (var i = 0; i < athletes.length - 4; i++) {
+  // if (athletes[i].sex === "Men" && athletes[i].group === "Sprints") {
     var athlete = athletes[i]
     workout_data.push({ label: athlete.name,
                         times: athlete.workoutPercentages,
@@ -148,7 +148,7 @@ for (var i = 0; i < athletes.length; i++) {
                         
     });
 
-  }
+  // }
 }
 
 console.log("Workout Data", workout_data);
@@ -274,26 +274,44 @@ function drawMeetGraph() {
   }
 
 
-  //data
+//   //data
+//   function generateMeetData() {
+//     usain = [10.03, 9.69, 9.58, 9.82, 9.76, 9.63];
+//     usain_data = [];
+//     tyson = [9.84, 9.84, 9.77, 9.69, 9.78, 9.79];
+//     tyson_data = [];
+//     for (var i = 0; i < 6; i++) {
+//         usain_data.push([i, usain[i]])
+//         tyson_data.push([i, tyson[i]])
+//     }
+//     return [
+//       {
+//         data: usain_data,
+//         label: "Usain Bolt"
+//       },
+//       {
+//         data: tyson_data,
+//         label: "Tyson Gay"
+//       },
+//     ];
+//   }
+// }
   function generateMeetData() {
-    usain = [10.03, 9.69, 9.58, 9.82, 9.76, 9.63];
-    usain_data = [];
-    tyson = [9.84, 9.84, 9.77, 9.69, 9.78, 9.79];
-    tyson_data = [];
-    for (var i = 0; i < 6; i++) {
-        usain_data.push([i, usain[i]])
-        tyson_data.push([i, tyson[i]])
+    meet_data = []
+    for (var i = 0; i < athletes.length - 4; i++) {
+        var athlete = athletes[i];
+
+        var athlete_data = [];
+        for (var j = 0; j < 6; j++) {
+            athlete_data.push([j, athlete.data[j]])
+        }
+        meet_data.push({
+            data: athlete_data,
+            label: athlete.name
+        });
     }
-    return [
-      {
-        data: usain_data,
-        label: "Usain Bolt"
-      },
-      {
-        data: tyson_data,
-        label: "Tyson Gay"
-      },
-    ];
+    console.log("Meet Data", meet_data);
+      return meet_data;
   }
 }
 

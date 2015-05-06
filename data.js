@@ -141,7 +141,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	     data: [10.03, 9.69, 9.58, 9.82, 9.76, 9.63]
 
 	},
 	{
@@ -160,7 +161,9 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [10.03, 9.23, 9.10, 10.02, 9.98, 9.68]
+
 
 	},
 	{
@@ -179,7 +182,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.03, 9.23, 9.50, 10.00, 9.78, 9.98]
 
 	},
 	{
@@ -198,7 +202,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.13, 9.33, 9.52, 9.98, 9.58, 9.88]
 
 	},
 	{
@@ -217,7 +222,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.93, 10.33, 9.62, 9.92, 9.48, 9.58]
 
 	},
 	{
@@ -236,7 +242,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [10.03, 9.23, 9.10, 10.02, 9.98, 9.68]
 
 	},
 	{
@@ -255,7 +262,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [10.03, 9.53, 9.80, 9.22, 9.84, 9.88]
 
 	},
 	{
@@ -274,7 +282,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.23, 9.73, 9.67, 9.23, 9.89, 9.78]
 
 	},
 	{
@@ -293,7 +302,9 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	     data: [9.93, 10.33, 9.62, 9.92, 9.48, 9.58]
+
 
 	},
 	{
@@ -312,7 +323,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.83, 10.03, 9.62, 9.91, 9.30, 9.88]
 
 	},
 	{
@@ -331,7 +343,8 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.23, 9.73, 9.67, 9.23, 9.89, 9.78]
 
 	},
 	{
@@ -350,7 +363,9 @@ var athletes = [
 	      "it's been a tough few weeks at school",
 	      "had a great break from class!",
 	      "broke up with my girlfriend :(",
-	      "getting ready for the end of the semester"]
+	      "getting ready for the end of the semester"],
+	    data: [9.93, 10.33, 9.62, 9.92, 9.48, 9.58]
+
 
 	}
 

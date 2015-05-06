@@ -60,18 +60,18 @@ function d3LineWithLegend() {
           });
         }
 
-        selection.transition().call(chart)
+        // selection.transition().call(chart)
       });
 
 
       legend.dispatch.on('legendMouseover', function(d, i) {
         d.hover = true;
-        selection.transition().call(chart)
+        // selection.transition().call(chart)
       });
 
       legend.dispatch.on('legendMouseout', function(d, i) {
         d.hover = false;
-        selection.transition().call(chart)
+        // selection.transition().call(chart)
       });
 
 
@@ -94,11 +94,11 @@ function d3LineWithLegend() {
 
       legend
           .color(color)
-          .width(width / 2 - margin.right);
+          .width(width - margin.right);
 
       wrap.select('.legendWrap')
           .datum(data)
-          .attr('transform', 'translate(' + (width/2 - margin.left) + ',' + (-legend.height()) +')')
+          .attr('transform', 'translate(' + (width/10 - margin.left - 20) + ',' + (-legend.height() - 15) +')')
           .call(legend);
 
 
