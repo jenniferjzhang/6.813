@@ -16,17 +16,18 @@ var state = {
   event: false,
   entries: false,
   selectedMeet: "",
-  selectedEvent: "",
+  selectedEvent: "800m", //default to an arbitrary event so site doesn't break onLoad
   enteredAthletes: []
 };
 
 Handlebars.registerHelper('getPR', function(athlete) {
-  var pr = athlete.events[currentEvent].PR;
+  var pr = athlete.events[state.selectedEvent].PR;
   return new Handlebars.SafeString(pr);
 }); 
 
 Handlebars.registerHelper('getSB', function(athlete) {
-  var sb = athlete.events[currentEvent].SB;
+  console.log(athlete);
+  var sb = athlete.events[state.selectedEvent].SB;
   return new Handlebars.SafeString(sb);
 }); 
 
@@ -87,15 +88,33 @@ var scheduleHandler = function(event) {
     .removeClass("hidden");
   state.event = true;
   state.selectedEvent = event;
- /*   var entriesSource = $("#entries-template").html();
+  var someList = athletes.filter(function(athlete) {
+    return state.selectedEvent in athlete.events
+  });
+  console.log(someList);
+  if (someList.length === 0) {
+    //If there are no athletes that can compete in this event
+    //Show friendly error message, prevent graph and table from appearing
+    $("#entries").html("It seems like you don't have any athletes qualified to compete in the " + state.selectedEvent + ".")
+    .css("text-align","center")
+    .css('margin-top', '15%');  
+    // Hide graphs is no athletes can compete
+    $(".predicted-results-graph").hide();
+    $(".predicted-results-table").hide();
+  } else {
+    var entriesSource = templates["entries"];
     var entriesTemplate = Handlebars.compile(entriesSource);
 
-  $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
+    $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
       function (athlete) {
        console.log(state.selectedEvent, athlete.events)
         return state.selectedEvent in athlete.events
       } 
-    )))*/
+    )));
+    // show graphs
+    $(".predicted-results-graph").show();
+    $(".predicted-results-table").show();
+  }
 };
 
 // hide the entries and graph
@@ -158,6 +177,7 @@ var enterAthlete = function(id) {
   var athleteId = id[0].firstElementChild.id;
   var athlete = athletes[athleteId];
   console.log(athlete);
+
   // 
   
 };

@@ -44,7 +44,7 @@ var templates = {
 
  entries: '<table class="ui table" id="entries">'
 					+'	<thead> '
-					+'		<tr> '
+					+'		<tr id={{id}}> '
 					+'			<th class="four wide">Athlete</th> '
 					+'			<th class="two wide">Season Best</th> '
 					+'			<th class="two wide">Personal Record</th>'
@@ -72,7 +72,7 @@ var templates = {
 
    results: '<table class="ui table" id="results"> '
 					+'		<thead> '
-					+'			<tr> '
+					+'			<tr id={{id}}> '
 					+'				<th class="four wide">Athlete</th> '
 					+'				<th class="four wide">Time</th> '
 					+'				<th class="three wide">Points</th>'
@@ -117,5 +117,6 @@ var templates = {
 				+'		</tbody> '
 				+'	</table> '
 				+'</div>',
+
 }
 
