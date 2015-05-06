@@ -1,19 +1,6 @@
 html, body {
 	height: 100%;
 }
-.dashboard-wrapper{
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-color: white;
-	margin: 0 auto;
-	overflow: auto;
-}
-
-.dashboard-navigation {
-	width: 100%;
-	display: block;
-}
 
 .ui.breadcrumb {
   font-family: "Raleway";
@@ -24,7 +11,8 @@ html, body {
 }
 
 .content-wrapper {
-	padding: 10px;
+	margin-top: 6%;
+	padding: 0px;
 	height: 90%;
 }
 
@@ -80,28 +68,105 @@ html, body {
 	width: 50%;
 }
 
-#navigation-home {
-	font-family: "Raleway";
-	font-size: 26pt;
+.dashboard-wrapper{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	margin: 0 auto;
+}
+
+.dashboard-navigation {
+	position: absolute;
+	height: 10%;
+	width: 100%;
+	display: block;
+}
+
+.dashboard-main-column {
+	position: absolute;
+	display: inline-block;
 	height: 90%;
 	width: 20%;
-	background-color: white;
+	top: 9%;
+	margin-top: 25px;
+	padding-left: 10px;
+	padding-top: 20px;
+	background-color: #CC0300;
+
+}
+
+.dashboard-content {
+	position: absolute;
+	display: inline-block;
+	height: 90%;
+	width: 80%;
+	top: 10%;
+	left: 20%;
+	margin-top: 40px;
+}
+
+#navigation-home {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 20%;
+	background-color: #CC0300;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-	color: #CC0300;
+	color: white;
+	border-bottom: 1px solid white;
 }
 
 #navigation-link {
 	font-family: "Raleway";
-	font-size: 18pt;
+	font-size: 24pt;
 	height: 90%;
 	width: 40%;
 	background-color: white;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
+	color: #949494;
+	border-bottom: 1px solid #949494;
+
+}
+
+#navigation-link-active {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: #F7F7F7;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: #CC0300;
+	border-bottom: 1px solid #949494;
+
+}
+
+a#navigation-link:hover {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: #F7F7F7;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: #CC0300;
+	border-bottom: 1px solid #949494;
+
 } 
+
+.ui.breadcrumb {
+	margin-left: 20%; 
+	padding: 10px 5px;
+}
+
+
 .chart-container {
 	width: 90%;
 	margin: 0 auto;
@@ -113,8 +178,6 @@ a {
   color: #CC0300;
 }
 
-
-
 .event {
   font-family: "Raleway";
   font-size: 14pt;
@@ -122,5 +185,15 @@ a {
 }
 
 .hidden {
-	visibility: hidden;
+	visibility: none;
+}
+
+.ui.menu .active.item {
+	box-shadow: none;
+	color: #CC0300;
+}
+
+.ui.menu .active.item:hover {
+	box-shadow: none;
+
 }

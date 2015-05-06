@@ -1,3 +1,7 @@
+body {
+	font-family: "Lato";
+}
+
 h1 {
 	font-family: "Raleway";
 	font-size: 28pt;
@@ -39,12 +43,10 @@ h2 {
 	width: 20%;
 	top: 9%;
 	margin-top: 25px;
-/*	border-top: 5px solid white;
-*/	padding-left: 10px;
+	padding-left: 10px;
 	padding-top: 20px;
 	background-color: #CC0300;
-/*	background-image: url('../img/old_moon.png');
-	background-repeat: repeat;*/
+
 }
 
 .dashboard-content {
