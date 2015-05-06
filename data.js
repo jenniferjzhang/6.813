@@ -682,5 +682,41 @@ var results = {
 };
 
 function getEventResults(participants, event) {
-	//first sort participants based on personal record
+	//first sort participants based on personal record/season best
+	var sorted = [];
+	console.log(participants);
+	//Get participant from Array
+	for (index in participants) {
+		var participant = participants[index];
+		sorted.push([participant, getBestTime(participant, event)]);
+	}
+	sorted.sort(function(a,b) {return a[1] - b[1]});
+	//console.log(sorted);
+	//then assign points based on ranking
+	var points = [10,8,6,5,4,3,2,1];
+	var results = {};
+	for (i in sorted) {
+		var runner = sorted[i];
+		console.log(runner[0]);
+		results[runner[0].name] = points[sorted.indexOf(runner)];
+	}
+	console.log(results);
+	return results
 };
+
+function getBestTime(participant, event) {
+	console.log(participant);
+	var PR = participant.events[event].PR;
+	var SB = participant.events[event].SB;
+
+	if (PR.length === 1) {
+		//PR = '-'
+		return SB
+	} else if (SB.length ===1) {
+		//SB  '-'
+		return PR
+	} else {
+		//@Bruno fill this in?
+		return Math.min(SB[0] + SB.substring(2,4) + SB.substring(5),PR[0] + PR.substring(2,4) + PR.substring(5))
+	}
+}

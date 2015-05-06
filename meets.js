@@ -182,7 +182,7 @@ var enterAthlete = function(id) {
 
   //Add athelete to participants, then compute results, redraw graph
   meetResults.participants.push(athlete);
-  console.log(meetResults.participants);
+ // console.log(meetResults.participants);
   meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
 };
 
