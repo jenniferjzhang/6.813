@@ -1,4 +1,13 @@
-var currentEvent = "800m";
+// things to work on
+// jwang suggested changing body text to a font less decorative than Raleway
+// handlebars template doesn't update dynamically, so currently can only show athletes staically from var currentEvent
+// predicted points is not implemented
+// entry table is not sorted by PR or SB or Predicted Points
+// predicted points graph needs better layout, padding/margin
+// submit entry button is unimplemented yet
+
+// currentEvent is a static variable that will select all the athletes who run that
+var currentEvent = "800m"; // can also be "100m", or "400m"
 var state = {
   meet: false,
   event: false,
