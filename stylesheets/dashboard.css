@@ -62,7 +62,7 @@ h2 {
 #navigation-home {
 	font-family: "Raleway";
 	font-size: 24pt;
-	height: 90%;
+	min-height: 90%;
 	width: 20%;
 	background-color: #CC0300;
 	display: inline-block;

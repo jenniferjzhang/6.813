@@ -188,6 +188,11 @@ a {
 	visibility: none;
 }
 
+.ui.menu {
+	box-shadow: none;
+
+}
+
 .ui.menu .active.item {
 	box-shadow: none;
 	color: #CC0300;
