@@ -7,12 +7,18 @@
 		if ($(this).attr('id') === "male-sprinters") {
 
 			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+
 				$(this).next().removeClass('hidden');
 				$(this).next().show();
 				console.log("Submenu launching");
 				$(this).parent().removeClass("item");
 				$(this).parent().addClass("active item");
 			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+
 				$(this).next().hide();
 				$(this).next().addClass('hidden');
 				$(this).parent().removeClass("active item");
@@ -20,13 +26,20 @@
 
 			}
 		} else if ($(this).attr('id') === 'female-sprinters') {
+
 			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+
 				$(this).next().removeClass('hidden');
 				$(this).next().show();
 				console.log("Submenu launching");
 				$(this).parent().removeClass("item");
 				$(this).parent().addClass("active item");
 			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+
 				$(this).next().hide();
 				$(this).next().addClass('hidden');
 				$(this).parent().removeClass("active item");
