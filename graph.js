@@ -12,282 +12,147 @@ function p(t1, t2, t) {
     return ((t-t1) / difference)*0.5 + 0.25
   }
 }
-workout_data = [
-  {
-    label: 'Usain Bolt',
-    times: [100, 75, 75, 100, 66, 75],
-    statuses: [
-      "feeling pretty good",
-      "didn't get much sleep last night",
-      "it's been a tough few weeks at school",
-      "had a great break from class!",
-      "broke up with my girlfriend :(",
-      "getting ready for the end of the semester"
-    ],
-    weeks: [
-      [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:20',
-           position: p(15, 30, 20),
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         },
 
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:10',
-           position: p(15, 30, 10)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:32',
-           position: p(15, 30, 32)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:20',
-           position: p(15, 30, 20)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:20',
-           position: p(15, 30, 20)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ],
-    ],
-  },
-  {
-    label: 'Tyson Gay',
-    times: [50, 50, 66, 66, 75, 100],
-    statuses: [
-      "Semester's getting off to a rough start",
-      "Haven't been eating as well as I'd like",
-      "I hurt my ankle, but it's been getting better.",
-      "Feeling pretty good. Excited for nationals!",
-      "Doing alright",
-      "Doing pretty well"
-    ],
-    weeks: [
-      [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:32',
-           position: p(15, 30, 32),
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         },
+workout_data = []
 
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:20',
-           position: p(15, 30, 20)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:31',
-           position: p(15, 30, 31)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:24',
-           position: p(15, 30, 24)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:31',
-           position: p(15, 30, 31)
-         }
-      ], [
-        {
-         event: '400m',
-         best: '2:15',
-         worst: '2:30',
-         time: '2:22',
-         position: p(15, 30, 22)
-       }, {
-         event: '800m',
-         best: '2:15',
-         worst: '2:30',
-         time: '2:24',
-         position: p(15, 30, 24)
-       }, {
-         event: '800m',
-         best: '2:15',
-         worst: '2:30',
-         time: '2:31',
-         position: p(15, 30, 31)
-       }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:20',
-           position: p(15, 30, 20)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:16',
-           position: p(15, 30, 16)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:22',
-           position: p(15, 30, 22)
-         }
-      ], [
-        {
-           event: '400m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:18',
-           position: p(15, 30, 18)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:19',
-           position: p(15, 30, 19)
-         }, {
-           event: '800m',
-           best: '2:15',
-           worst: '2:30',
-           time: '2:17',
-           position: p(15, 30, 17)
-         }
-      ],
-    ],
+for (var i = 0; i < athletes.length; i++) {
+  if (athletes[i].sex === "Men" && athletes[i].group === "Sprints") {
+    var athlete = athletes[i]
+    workout_data.push({ label: athlete.name,
+                        times: athlete.workoutPercentages,
+                        statuses: athlete.statuses,
+                        weeks: [
+                            [
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:20',
+                                 position: p(15, 30, 20),
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ], [
+                              {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               },
+
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:10',
+                                 position: p(15, 30, 10)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ], [
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ], [
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:32',
+                                 position: p(15, 30, 32)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ], [
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:20',
+                                 position: p(15, 30, 20)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ], [
+                              {
+                                 event: '400m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:20',
+                                 position: p(15, 30, 20)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:16',
+                                 position: p(15, 30, 16)
+                               }, {
+                                 event: '800m',
+                                 best: '2:15',
+                                 worst: '2:30',
+                                 time: '2:22',
+                                 position: p(15, 30, 22)
+                               }
+                            ]]
+                        
+    });
+
   }
-]
+}
+
+console.log("Workout Data", workout_data);
+
 
 function log(text) {
   if (console && console.log) console.log(text);
@@ -405,7 +270,7 @@ function drawMeetGraph() {
 
     var height = ( h - margin.top - margin.bottom - 20 < 0 ) ? 
               margin.top + margin.bottom + 2 : h;
-    return height * 0.5;
+    return height * 0.75;
   }
 
 
@@ -544,7 +409,6 @@ function drawWorkoutGraph() {
     var height = ( h - margin.top - margin.bottom - 20 < 0 ) ? 
               margin.top + margin.bottom + 2 : h;
 
-    console.log("height", height)
     return height * 0.75;
   }
 

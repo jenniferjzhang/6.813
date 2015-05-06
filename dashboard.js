@@ -3,12 +3,13 @@
 	}
 
 	$('.group-title').on("click", function() {
-		console.log($(this).attr('id'));
-		if ($(this).attr('id') === "male-sprinters") {
+		if ($(this).attr('id') === "men-sprints") {
 
 			if($(this).next().hasClass('hidden')) {
 				$(this).prev().remove();
 				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
 
 				$(this).next().removeClass('hidden');
 				$(this).next().show();
@@ -18,6 +19,7 @@
 			} else {
 				$(this).prev().remove();
 				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
 
 				$(this).next().hide();
 				$(this).next().addClass('hidden');
@@ -25,11 +27,13 @@
 				$(this).parent().addClass("item");
 
 			}
-		} else if ($(this).attr('id') === 'female-sprinters') {
+		} else if ($(this).attr('id') === 'women-sprints') {
 
 			if($(this).next().hasClass('hidden')) {
 				$(this).prev().remove();
 				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
 
 				$(this).next().removeClass('hidden');
 				$(this).next().show();
@@ -39,6 +43,104 @@
 			} else {
 				$(this).prev().remove();
 				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
+
+				$(this).next().hide();
+				$(this).next().addClass('hidden');
+				$(this).parent().removeClass("active item");
+				$(this).parent().addClass("item");
+
+			}
+		} else if ($(this).attr('id') === 'men-400m') {
+
+			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
+
+				$(this).next().removeClass('hidden');
+				$(this).next().show();
+				console.log("Submenu launching");
+				$(this).parent().removeClass("item");
+				$(this).parent().addClass("active item");
+			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
+
+				$(this).next().hide();
+				$(this).next().addClass('hidden');
+				$(this).parent().removeClass("active item");
+				$(this).parent().addClass("item");
+
+			}
+		} else if ($(this).attr('id') === 'women-400m') {
+
+			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
+
+				$(this).next().removeClass('hidden');
+				$(this).next().show();
+				console.log("Submenu launching");
+				$(this).parent().removeClass("item");
+				$(this).parent().addClass("active item");
+			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
+
+				$(this).next().hide();
+				$(this).next().addClass('hidden');
+				$(this).parent().removeClass("active item");
+				$(this).parent().addClass("item");
+
+			}
+		} else if ($(this).attr('id') === 'men-800m') {
+
+			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
+
+				$(this).next().removeClass('hidden');
+				$(this).next().show();
+				console.log("Submenu launching");
+				$(this).parent().removeClass("item");
+				$(this).parent().addClass("active item");
+			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
+				
+				$(this).next().hide();
+				$(this).next().addClass('hidden');
+				$(this).parent().removeClass("active item");
+				$(this).parent().addClass("item");
+
+			}
+		} else if ($(this).attr('id') === 'women-800m') {
+
+			if($(this).next().hasClass('hidden')) {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-down'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "1px solid white" });
+
+
+				$(this).next().removeClass('hidden');
+				$(this).next().show();
+				console.log("Submenu launching");
+				$(this).parent().removeClass("item");
+				$(this).parent().addClass("active item");
+			} else {
+				$(this).prev().remove();
+				$( "<i class='fa fa-caret-right'></i>" ).insertBefore($(this));
+				$(this).css({ 'border-bottom': "none" });
+
 
 				$(this).next().hide();
 				$(this).next().addClass('hidden');
