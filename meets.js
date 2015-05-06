@@ -88,16 +88,17 @@ var scheduleHandler = function(event) {
     .removeClass("hidden");
   state.event = true;
   state.selectedEvent = event;
-  var someList = athletes.filter(function(athlete) {
+  var competingAthletes = athletes.filter(function(athlete) {
     return state.selectedEvent in athlete.events
   });
-  console.log(someList);
-  if (someList.length === 0) {
+  
+  if (competingAthletes.length === 0) {
     //If there are no athletes that can compete in this event
     //Show friendly error message, prevent graph and table from appearing
     $("#entries").html("It seems like you don't have any athletes qualified to compete in the " + state.selectedEvent + ".")
     .css("text-align","center")
     .css('margin-top', '15%');  
+
     // Hide graphs is no athletes can compete
     $(".predicted-results-graph").hide();
     $(".predicted-results-table").hide();
@@ -107,7 +108,6 @@ var scheduleHandler = function(event) {
 
     $(".dashboard-content-top").html(entriesTemplate(athletes.filter(
       function (athlete) {
-       console.log(state.selectedEvent, athlete.events)
         return state.selectedEvent in athlete.events
       } 
     )));
@@ -115,7 +115,7 @@ var scheduleHandler = function(event) {
     $(".predicted-results-graph").show();
     $(".predicted-results-table").show();
     $(".button").click(submitButtonHandler);
-    
+
   }
 };
 
@@ -178,10 +178,9 @@ var enterAthlete = function(id) {
   // Get athleteId from button, then get athlete from data.js
   var athleteId = id[0].firstElementChild.id;
   var athlete = athletes[athleteId];
-  console.log(athlete);
+  var meetResults = results[state.selectedEvent];
 
-  // 
-  
+  meetResults.rankings = getEventResults(meetResults);
 };
 
 // given id, remove athlete from predicted entries

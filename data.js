@@ -353,4 +353,348 @@ var athletes = [
 
 	}
 
-]
+];
+
+var results = {
+	
+	"10,000m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"4x100m Relay": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+
+	},
+	
+	"3,000m Steeplechase": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"110m Hurdles Trials": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"100m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"1,500m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"110m Hurdles Final": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"400m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"100m Final": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"800m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"400m Hurdles": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"200m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"5,000m": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+	
+	"4x400m Relay": {
+		participants:[
+			{
+				id: 9000,
+				name: "Harrison Ford",
+				sex: "Men",
+				school: "Harvard",
+				events: {
+					"800m" : {PR: "1:59.84", SB: "2:02:10"},
+				}
+			},
+			{
+				id: 9001,
+				name: "Tyler Drake",
+				sex: "Men",
+				school: "BU",
+				events: {
+					"800m" : {PR: "1:58.13", SB: "2:01:056"},
+				}
+			}
+		],
+		rankings: getEventResults,
+	},
+};
+
+function getEventResults(participants, event) {
+	//first sort participants based on personal record
+};
