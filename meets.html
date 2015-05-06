@@ -86,8 +86,30 @@
 				</script>
 			</div>
 			
-			<div class="dashboard-content-top hidden"> 
-				<table class="ui table" id="content-top"> 
+			<div class="dashboard-content-top hidden">
+				<script id="entries-template" type="text/x-handlebars-template">
+					<table class="ui table" id="entries">
+						<thead> 
+							<tr> 
+								<th class="four wide">Athlete</th> 
+								<th class="four wide">Season Best</th> 
+								<th class="three wide">Personal Record</th> 
+								<th class="two wide">Predicted Points</th> 
+							</tr> 
+						</thead> 
+						<tbody>
+							{{#each this}}
+								<tr>
+									<td class="event">{{name}}</td>
+									<td>{{getSB this}}</td>
+									<td>{{getPR this}}</td>
+									<td>5</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</script>
+<!-- 				<table class="ui table" id="content-top"> 
 					<tbody> 
 						<thead> 
 							<tr> 
@@ -144,7 +166,7 @@
 							<td>4</td> 
 						</tr> 
 					</tbody> 
-				</table> 
+				</table>  -->
 			</div>
 
 			<div class="dashboard-content-bottom hidden">

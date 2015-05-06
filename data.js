@@ -114,3 +114,114 @@ var schedule = [
 		entries:true
 	},
 ]
+
+var athletes = [
+	{
+		name: "Henry Tareque",
+		sex: "Men",
+		group: "800m",
+		events: {
+			"400m": {PR: "51.60", SB: "51.60"},
+			"800m": {PR: "1:58.90", SB: "1:58.90"}
+		},
+	},
+	{
+		name: "Bruno Faviero",
+		sex: "Men",
+		group: "Sprints",
+		events: {
+			"100m": {PR: "10.87", SB: "10.95"},
+			"200m": {PR: "22.35", SB: "22.35"}
+		},
+	},
+	{
+		name: "Carlos Enriquez",
+		sex: "Men",
+		group: "Sprints",
+		events: {
+			"100m": {PR: "11.02", SB: "11.10"},
+			"200m": {PR: "22.42", SB: "22.65"}
+		},
+	},
+	{
+		name: "Danny Newman",
+		sex: "Men",
+		group: "400m",
+		events: {
+			"200m": {PR: "22.88", SB: "22.88"},
+			"400m": {PR: "49.50", SB: "49.50"}
+		},
+	},
+	{
+		name: "David Rudisha",
+		sex: "Men",
+		group: "800m",
+		events: {
+			"400m": {PR: "45.15", SB: "-"},
+			"800m": {PR: "1:40.91", SB: "-"}
+		},
+	},
+	{
+		name: "Vernon Norwood",
+		sex: "Men",
+		group: "400m",
+		events: {
+			"200m": {PR: "20.82", SB: "20.84"},
+			"400m": {PR: "44.44", SB: "44.44"}
+		},
+	},
+	{
+		name: "Jennifer Zhang",
+		sex: "Women",
+		group: "Sprints",
+		events: {
+			"100m": {PR: "13.54", SB: "13.34"},
+			"200m": {PR: "27.20", SB: "27.20"}
+		},
+	},
+	{
+		name: "Alysia Montaño",
+		sex: "Women",
+		group: "800m",
+		events: {
+			"400m": {PR: "52.09", SB: "-"},
+			"800m": {PR: "1:57.34", SB: "-"}
+		},
+	},
+	{
+		name: "Florence Joyner",
+		sex: "Women",
+		group: "Sprints",
+		events: {
+			"100m": {PR: "10.49", SB: "-"},
+			"200m": {PR: "21.34", SB: "-"}
+		},
+	},
+	{
+		name: "Sanya Richards-Ross",
+		sex: "Women",
+		group: "400m",
+		events: {
+			"200m": {PR: "22.09", SB: "-"},
+			"400m": {PR: "48.70", SB: "-"}
+		},
+	},
+	{
+		name: "Alyson Felix",
+		sex: "Women",
+		group: "400m",
+		events: {
+			"200m": {PR: "21.69", SB: "-"},
+			"400m": {PR: "49.59", SB: "-"}
+		},
+	},
+	{
+		name: "Maggie Vessey",
+		sex: "Women",
+		group: "800m",
+		events: {
+			"800m": {PR: "1:57.84", SB: "2:00.04"}
+		},
+	},
+
+]
