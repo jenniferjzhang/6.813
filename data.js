@@ -694,11 +694,11 @@ function getEventResults(participants, event) {
 	//console.log(sorted);
 	//then assign points based on ranking
 	var points = [10,8,6,5,4,3,2,1];
-	var results = {};
+	var results = [];
 	for (i in sorted) {
 		var runner = sorted[i];
 		console.log(runner[0]);
-		results[runner[0].name] = points[sorted.indexOf(runner)];
+		results.push([runner[0], points[sorted.indexOf(runner)]]);
 	}
 	console.log(results);
 	return results

@@ -31,8 +31,6 @@ Handlebars.registerHelper('getSB', function(athlete) {
   return new Handlebars.SafeString(sb);
 }); 
 
-Handlebars.registerHelper("")
-
 // handler for clicking on a meet in the meets list
 var meetsHandler = function(event) {
   var meet = $(this).text();
@@ -103,6 +101,7 @@ var scheduleHandler = function(event) {
     $(".predicted-results-graph").hide();
     $(".predicted-results-table").hide();
   } else {
+    console.log("compiling");
     var entriesSource = templates["entries"];
     var entriesTemplate = Handlebars.compile(entriesSource);
 
@@ -111,6 +110,33 @@ var scheduleHandler = function(event) {
         return state.selectedEvent in athlete.events
       } 
     )));
+
+    //calculate points
+    var ptsCols = $("#entries")[0].children[1].children;
+    var athIds = []
+    
+    //console.log(ptsCols);
+    for (col in ptsCols) {
+      if (!isNaN(col)) {
+        // for each row in the table
+
+//        console.log(col, ptsCols[col]);
+        athIds.push(ptsCols[col].id);
+        var ptsCol = ptsCols[col].children[3];
+       // ptsCol.innerHTML = "FIGS";
+        console.log(ptsCol);
+      }
+    }
+
+    //with athIds get athletes,
+    var aths = []
+    for (i in athIds) {
+      aths.push(athletes[athIds[i]]);
+    }
+    //get points
+    var eventpoints = getEventResults(aths, state.selectedEvent);
+    console.log(eventpoints);
+
     // show graphs
     $(".predicted-results-graph").show();
     $(".predicted-results-table").show();
@@ -184,6 +210,9 @@ var enterAthlete = function(id) {
   meetResults.participants.push(athlete);
  // console.log(meetResults.participants);
   meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
+
+  //Now that we have results, add them to table
+
 };
 
 // given id, remove athlete from predicted entries
