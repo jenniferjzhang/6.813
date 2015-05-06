@@ -149,7 +149,6 @@ html, body {
 	color: #CC0300;
 	border-bottom: 1px solid #949494;
 
->>>>>>> Stashed changes
 }
 
 a#navigation-link:hover {
@@ -161,7 +160,6 @@ a#navigation-link:hover {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-<<<<<<< Updated upstream
 	color: #949494;
 	border-bottom: 1px solid #949494;
 
@@ -190,21 +188,11 @@ a#navigation-link:hover {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
-=======
->>>>>>> Stashed changes
 	color: #CC0300;
 	border-bottom: 1px solid #949494;
 
 } 
 
-<<<<<<< Updated upstream
-.ui.breadcrumb {
-	margin-left: 20%; 
-	padding: 10px 5px;
-}
-
-
-=======
 .ui.table a {
 	font-size: 12pt;
 	font-family: "Lato";
@@ -230,7 +218,6 @@ a#navigation-link:hover {
 	height: 90%;
 }
 
->>>>>>> Stashed changes
 .chart-container {
 	width: 90%;
 	margin: 0 auto;
@@ -249,7 +236,7 @@ a {
 }
 
 .hidden {
-	visibility: none;
+	visibility: hidden;
 }
 
 .ui.menu {
