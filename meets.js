@@ -133,10 +133,37 @@ var scheduleHandler = function(event) {
     for (i in athIds) {
       aths.push(athletes[athIds[i]]);
     }
+
+  var meetResults = results[state.selectedEvent];
+
+  aths = aths.concat(meetResults.participants);
+  console.log(aths);
+  //meetResults.rankings = getEventResults(meetResults.participants, state.selectedEvent);
+
     //get points
     var eventpoints = getEventResults(aths, state.selectedEvent);
     console.log(eventpoints);
+  console.log(ptsCols);
 
+  //sorry for O(N^2)
+  for (i in ptsCols) {
+    //for each row
+    console.log(ptsCols[i], 'pts');
+    for (j in eventpoints) {
+      console.log(eventpoints[j][0]); //participant
+      var part = eventpoints[j][0];
+      //console.log(ptsCols[i]);console.log('why');
+      console.log('compate',part.id, ptsCols[i].id);
+      if (part.id == ptsCols[i].id) {
+        
+        //console.log(ptsCols[i].children,'where');
+        if (ptsCols[i].children[3].innerHTML) {
+          ptsCols[i].children[3].innerHTML = eventpoints[j][1];
+        }
+
+              }
+    }
+  }
     // show graphs
     $(".predicted-results-graph").show();
     $(".predicted-results-table").show();
