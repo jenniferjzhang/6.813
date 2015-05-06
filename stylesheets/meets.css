@@ -3,11 +3,13 @@ html, body {
 }
 
 .ui.breadcrumb {
-  font-family: "Raleway";
-  font-size: 14pt;
-  color: #CC0300;
-  width: 100%;
-  margin: .5em 0em;
+	font-family: "Raleway";
+ 	font-size: 14pt;
+ 	color: #CC0300;
+  	width: 100%;
+	margin-left: 20%; 
+	padding: 10px 5px;
+
 }
 
 .content-wrapper {
@@ -39,7 +41,7 @@ html, body {
 .dashboard-content-top {
 	position: relative;
 	display: inline-block;
-	height: 40%;
+	height: 50%;
 	width: 60%;
 	float: left;
 	padding-bottom: 20px;
@@ -50,9 +52,10 @@ html, body {
 	position: relative;
 	display: inline-block;
 	height: 40%;
-	width: 60%;
+	width: 50%;
 	float: left;
-	margin-top: 10px;	
+	margin-top: 5px;
+	margin-left: 10px;	
 }
 
 .predicted-results-table {
@@ -74,6 +77,7 @@ html, body {
 	width: 100%;
 	background-color: white;
 	margin: 0 auto;
+	overflow: auto;
 }
 
 .dashboard-navigation {
@@ -116,8 +120,8 @@ html, body {
 	vertical-align: middle;
 	text-align: center;
 	color: white;
-	border-bottom: 1px solid white;
-}
+/*	border-bottom: 1px solid white;
+*/}
 
 #navigation-link {
 	font-family: "Raleway";
@@ -156,16 +160,63 @@ a#navigation-link:hover {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
+	color: #949494;
+	border-bottom: 1px solid #949494;
+
+}
+
+#navigation-link-active {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: #F7F7F7;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	color: #CC0300;
+	border-bottom: 1px solid #949494;
+
+}
+
+a#navigation-link:hover {
+	font-family: "Raleway";
+	font-size: 24pt;
+	height: 90%;
+	width: 40%;
+	background-color: #F7F7F7;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
 	color: #CC0300;
 	border-bottom: 1px solid #949494;
 
 } 
 
-.ui.breadcrumb {
-	margin-left: 20%; 
-	padding: 10px 5px;
+.ui.table a {
+	font-size: 12pt;
+	font-family: "Lato";
+
 }
 
+.ui.table {
+	width: 95%;
+	margin: 0 auto;
+}
+
+#schedule {
+	font-size: 10pt;
+	width: 100%;
+}
+
+
+#schedule a {
+	font-size: 10pt;
+}
+
+#schedule tr {
+	height: 90%;
+}
 
 .chart-container {
 	width: 90%;
@@ -185,7 +236,7 @@ a {
 }
 
 .hidden {
-	visibility: none;
+	visibility: hidden;
 }
 
 .ui.menu {
